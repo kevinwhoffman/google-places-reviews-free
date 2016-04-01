@@ -216,6 +216,17 @@ Misc
 	padding: 0;
 }
 
+
+[id*='gpr_widget'] div.gpr-read-all-reviews {
+	width: 100%;
+	text-align: center;
+}
+
+[id*='gpr_widget'] div.gpr-read-all-reviews a {
+	width: 100%;
+	text-align: center;
+}
+
 /*--------------------------------
 GPR Clearfix
 ------------------------------------*/
