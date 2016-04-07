@@ -131,13 +131,16 @@ div.gpr-place-search-wrap > p {
 }
 
 div.gpr-place-search-wrap > p.gpr-autocomplete {
-	width: 65%;
+	width: 100%;
 	margin-right: 2%;
 }
 
 div.gpr-place-search-wrap > p.gpr-place-type {
-	width: 33%;
+	width: 100%;
 }
+
+.pac-container { z-index: 9999999 !important; width: 100%; !important }
+
 
 /* Set Business (slide down) */
 

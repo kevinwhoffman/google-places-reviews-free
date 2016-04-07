@@ -68,7 +68,7 @@ class Google_Places_Reviews extends WP_Widget {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		if ( $hook == 'widgets.php' ) {
+		if ( $hook == 'widgets.php' || ($hook == 'post.php' && defined('SITEORIGIN_PANELS_VERSION') ) ) {
 
 			wp_enqueue_script( 'gpr_google_places_gmaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places', array( 'jquery' ) );
 
