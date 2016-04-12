@@ -29,9 +29,6 @@
 	display: block;
 	width: 100%;
 	min-height: 30px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 .gpr-small-descption {
@@ -159,8 +156,6 @@ Alerts
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 	background-color: #fcf8e3;
 	border: 1px solid #fbeed5;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
 	border-radius: 4px;
 	font-size: 13px;
 	margin: 20px 0;

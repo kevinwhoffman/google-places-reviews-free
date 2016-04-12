@@ -89,8 +89,6 @@ Labels
 	position: absolute;
 	top: 6px;
 	right: 16px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
 	display: inline-block;
 	padding: 6px 10px;
