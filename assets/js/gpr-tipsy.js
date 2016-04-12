@@ -7,21 +7,22 @@
 
 	function maybeCall(thing, ctx) {
 		return (typeof thing == 'function') ? (thing.call(ctx)) : thing;
-	};
+	}
 
 	function isElementInDOM(ele) {
+		/*jshint boss:true */
 		while (ele = ele.parentNode) {
 			if (ele == document) return true;
 		}
 		return false;
-	};
+	}
 
 	function Tipsy(element, options) {
 		this.$element = $(element);
 		this.options = options;
 		this.enabled = true;
 		this.fixTitle();
-	};
+	}
 
 	Tipsy.prototype = {
 		show: function () {
@@ -100,7 +101,6 @@
 		getTitle: function () {
 			var title, $e = this.$element, o = this.options;
 			this.fixTitle();
-			var title, o = this.options;
 			if (typeof o.title == 'string') {
 				title = $e.attr(o.title == 'title' ? 'original-title' : o.title);
 			} else if (typeof o.title == 'function') {
@@ -161,7 +161,7 @@
 		function enter() {
 			var tipsy = get(this);
 			tipsy.hoverState = 'in';
-			if (options.delayIn == 0) {
+			if (options.delayIn === 0) {
 				tipsy.show();
 			} else {
 				tipsy.fixTitle();
@@ -169,19 +169,19 @@
 					if (tipsy.hoverState == 'in') tipsy.show();
 				}, options.delayIn);
 			}
-		};
+		}
 
 		function leave() {
 			var tipsy = get(this);
 			tipsy.hoverState = 'out';
-			if (options.delayOut == 0) {
+			if (options.delayOut === 0) {
 				tipsy.hide();
 			} else {
 				setTimeout(function () {
 					if (tipsy.hoverState == 'out') tipsy.hide();
 				}, options.delayOut);
 			}
-		};
+		}
 
 		if (!options.live) this.each(function () {
 			get(this);
@@ -266,7 +266,7 @@
 			if ($(window).height() + $(document).scrollTop() - $this.offset().top < margin) dir.ns = 's';
 
 			return dir.ns + (dir.ew ? dir.ew : '');
-		}
+		};
 	};
 
 })(jQuery);

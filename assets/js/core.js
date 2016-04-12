@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
 	if (sunriseStrpos(document.location.hash, '#tab-') !== false)
 		$('#sunrise-plugin-tabs span:eq(' + document.location.hash.replace('#tab-', '') + ')').trigger('click');
 	// Auto-open tab by cookies
-	else if (sunriseReadCookie(pagenow + '_last_tab') != null)
+	else if (sunriseReadCookie(pagenow + '_last_tab') !== null)
 		$('#sunrise-plugin-tabs span:eq(' + sunriseReadCookie(pagenow + '_last_tab') + ')').trigger('click');
 	// Open first tab by default
 	else
@@ -142,7 +142,7 @@ jQuery(document).ready(function ($) {
 	// ########## Clickouts ##########
 
 	$(document).on('click', function (event) {
-		if ($('.sunrise-plugin-prevent-clickout:hover').length == 0)
+		if ($('.sunrise-plugin-prevent-clickout:hover').length === 0)
 			$('.sunrise-plugin-clickout').hide();
 	});
 
@@ -175,7 +175,7 @@ jQuery(document).ready(function ($) {
 
 		// Hide thickbox
 		tb_remove();
-	}
+	};
 
 
 	// ########## Color picker ##########
@@ -194,12 +194,13 @@ jQuery(document).ready(function ($) {
 // ########## Cookie utilities ##########
 
 function sunriseCreateCookie(name, value, days) {
+	var expires = "";
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-		var expires = "; expires=" + date.toGMTString()
-	} else var expires = "";
-	document.cookie = name + "=" + value + expires + "; path=/"
+		expires = "; expires=" + date.toGMTString();
+	}
+	document.cookie = name + "=" + value + expires + "; path=/";
 }
 function sunriseReadCookie(name) {
 	var nameEQ = name + "=";
@@ -207,9 +208,9 @@ function sunriseReadCookie(name) {
 	for (var i = 0; i < ca.length; i++) {
 		var c = ca[i];
 		while (c.charAt(0) == ' ')c = c.substring(1, c.length);
-		if (c.indexOf(nameEQ) == 0)return c.substring(nameEQ.length, c.length)
+		if (c.indexOf(nameEQ) === 0)return c.substring(nameEQ.length, c.length);
 	}
-	return null
+	return null;
 }
 
 
