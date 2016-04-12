@@ -67,7 +67,7 @@ function gpr_upgrades_screen() {
 			<div id="gpr-upgrade-status" class="updated">
 				<p>
 					<?php _e( 'The upgrade process has started, please be patient. This could take several minutes. You will be automatically redirected when the upgrade is finished.', 'gpr' ); ?>
-					<img src="<?php echo GPR_PLUGIN_URL . '/assets/images/loading.gif'; ?>" id="gpr-upgrade-loader" />
+					<img src="<?php echo GPR_PLUGIN_URL . '/dist/images/loading.gif'; ?>" id="gpr-upgrade-loader" />
 				</p>
 			</div>
 			<script type="text/javascript">

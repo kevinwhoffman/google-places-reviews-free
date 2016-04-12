@@ -114,7 +114,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 		 * Register assets
 		 */
 		function register_assets() {
-			wp_register_style( 'core-plugin-framework', plugins_url( 'assets/css/core.css', dirname( __FILE__ ) ), false, $this->version, 'all' );
+			wp_register_style( 'core-plugin-framework', plugins_url( 'dist/css/core.css', dirname( __FILE__ ) ), false, $this->version, 'all' );
 			wp_register_script( 'core-plugin-framework-form', $this->assets( 'js', 'form.js' ), array( 'jquery' ), $this->version, false );
 			wp_register_script( 'core-plugin-fitvids', $this->assets( 'js', 'jquery.fitvids.js' ), array( 'core-plugin-framework-form' ), $this->version, false );
 

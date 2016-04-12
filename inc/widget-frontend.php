@@ -15,7 +15,7 @@ if ( ! isset( $response['result']['url'] ) || empty( $response['result']['url'] 
 }
 $name = isset( $response['result']['name'] ) ? $response['result']['name'] : __('Sorry, this business does not have a proper Place ID set.', 'gpr');
 
-$place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] : GPR_PLUGIN_URL . '/assets/images/default-img.png';
+$place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] : GPR_PLUGIN_URL . '/dist/images/default-img.png';
 ?>
 
 	<div class="gpr-<?php echo sanitize_title( $widget_style ); ?> gpr-widget-inner">
@@ -74,7 +74,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 					$overall_rating = $review['rating'];
 					$review_text    = $review['text'];
 					$time           = $review['time'];
-					$avatar         = isset( $review['avatar'] ) ? $review['avatar'] : GPR_PLUGIN_URL . '/assets/images/mystery-man.png';
+					$avatar         = isset( $review['avatar'] ) ? $review['avatar'] : GPR_PLUGIN_URL . '/dist/images/mystery-man.png';
 					$review_filter  = isset( $review_filter ) ? $review_filter : '';
 					$counter ++;
 

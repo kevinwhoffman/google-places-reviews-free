@@ -73,8 +73,8 @@ class Google_Places_Reviews extends WP_Widget {
 			wp_enqueue_script( 'gpr_google_places_gmaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places', array( 'jquery' ) );
 
 			//Enqueue
-			wp_enqueue_script( 'gpr_widget_admin_tipsy', plugins_url( 'assets/js/gpr-tipsy' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
-			wp_enqueue_script( 'gpr_widget_admin_scripts', plugins_url( 'assets/js/admin-widget' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
+			wp_enqueue_script( 'gpr_widget_admin_tipsy', plugins_url( 'dist/js/gpr-tipsy' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
+			wp_enqueue_script( 'gpr_widget_admin_scripts', plugins_url( 'dist/js/admin-widget' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
 
 			// in javascript, object properties are accessed as ajax_object.ajax_url, ajax_object.we_value
 			wp_localize_script(
@@ -82,8 +82,8 @@ class Google_Places_Reviews extends WP_Widget {
 				array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
 			);
 
-			wp_enqueue_style( 'gpr_widget_admin_tipsy', plugins_url( 'assets/css/gpr-tipsy' . $suffix . '.css', dirname( __FILE__ ) ) );
-			wp_enqueue_style( 'gpr_widget_admin_css', plugins_url( 'assets/css/admin-widget' . $suffix . '.css', dirname( __FILE__ ) ) );
+			wp_enqueue_style( 'gpr_widget_admin_tipsy', plugins_url( 'dist/css/gpr-tipsy' . $suffix . '.css', dirname( __FILE__ ) ) );
+			wp_enqueue_style( 'gpr_widget_admin_css', plugins_url( 'dist/css/admin-widget' . $suffix . '.css', dirname( __FILE__ ) ) );
 
 
 		}
@@ -98,7 +98,7 @@ class Google_Places_Reviews extends WP_Widget {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		$gpr_css = plugins_url( 'assets/css/google-places-reviews' . $suffix . '.css', dirname( __FILE__ ) );
+		$gpr_css = plugins_url( 'dist/css/google-places-reviews' . $suffix . '.css', dirname( __FILE__ ) );
 
 		if ( $this->options["disable_css"] !== "on" ) {
 			wp_register_style( 'gpr_widget', $gpr_css );
@@ -401,7 +401,7 @@ class Google_Places_Reviews extends WP_Widget {
 
 				//check to see if image is empty (no broken images)
 				if ( empty( $avatar_img ) ) {
-					$avatar_img = GPR_PLUGIN_URL . '/assets/images/mystery-man.png';
+					$avatar_img = GPR_PLUGIN_URL . '/dist/images/mystery-man.png';
 				}
 
 				//add array image to review array
@@ -451,10 +451,10 @@ class Google_Places_Reviews extends WP_Widget {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		//Determine which CSS to pull
-		$css_raised  = GPR_PLUGIN_URL . '/assets/css/gpr-theme-raised' . $suffix . '.css';
-		$css_minimal = GPR_PLUGIN_URL . '/assets/css/gpr-theme-minimal' . $suffix . '.css';
-		$css_shadow  = GPR_PLUGIN_URL . '/assets/css/gpr-theme-shadow' . $suffix . '.css';
-		$css_inset   = GPR_PLUGIN_URL . '/assets/css/gpr-theme-inset' . $suffix . '.css';
+		$css_raised  = GPR_PLUGIN_URL . '/dist/css/gpr-theme-raised' . $suffix . '.css';
+		$css_minimal = GPR_PLUGIN_URL . '/dist/css/gpr-theme-minimal' . $suffix . '.css';
+		$css_shadow  = GPR_PLUGIN_URL . '/dist/css/gpr-theme-shadow' . $suffix . '.css';
+		$css_inset   = GPR_PLUGIN_URL . '/dist/css/gpr-theme-inset' . $suffix . '.css';
 
 		if ( $widget_style === 'Minimal Light' || $widget_style === 'Minimal Dark' ) {
 			//enqueue theme style
@@ -523,7 +523,7 @@ class Google_Places_Reviews extends WP_Widget {
 		$is_gpr_header = true;
 
 		//AVATAR
-		$google_img = '<div class="gpr-google-logo-wrap"' . ( ( $hide_google_image === '1' ) ? ' style="display:none;"' : '' ) . '><img src="' . GPR_PLUGIN_URL . '/assets/images/google-small-logo.png' . '" class="gpr-google-logo-header" title=" ' . __( 'Reviewed from Google', 'gpr' ) . '" alt="' . __( 'Reviewed from Google', 'gpr' ) . '" /></div>';
+		$google_img = '<div class="gpr-google-logo-wrap"' . ( ( $hide_google_image === '1' ) ? ' style="display:none;"' : '' ) . '><img src="' . GPR_PLUGIN_URL . '/dist/images/google-small-logo.png' . '" class="gpr-google-logo-header" title=" ' . __( 'Reviewed from Google', 'gpr' ) . '" alt="' . __( 'Reviewed from Google', 'gpr' ) . '" /></div>';
 
 
 		//Header doesn't have a timestamp

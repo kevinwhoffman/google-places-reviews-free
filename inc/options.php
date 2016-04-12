@@ -121,6 +121,6 @@ function gpr_admin_tooltip( $tip_name ) {
 			break;
 	}
 
-	return '<img src="' . GPR_PLUGIN_URL . '/assets/images/help.png" title="' . $tip_text . '" class="tooltip-info" width="16" height="16" />';
+	return '<img src="' . GPR_PLUGIN_URL . '/dist/images/help.png" title="' . $tip_text . '" class="tooltip-info" width="16" height="16" />';
 
 }

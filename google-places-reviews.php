@@ -71,7 +71,7 @@ function gpr_options_scripts( $hook ) {
 	if ( 'settings_page_googleplacesreviews' != $hook ) {
 		return;
 	} else {
-		wp_register_style( 'gpr_custom_options_styles', plugin_dir_url( __FILE__ ) . '/assets/css/options.css' );
+		wp_register_style( 'gpr_custom_options_styles', plugin_dir_url( __FILE__ ) . '/dist/css/options.css' );
 		wp_enqueue_style( 'gpr_custom_options_styles' );
 
 	}
