@@ -95,7 +95,7 @@
 			$( this ).addClass( "clickable" ).unbind( "click" ).click( function () {
 				$( this ).toggleClass( 'toggled' );
 				$( this ).next().slideToggle();
-			} )
+			} );
 
 		} );
 
