@@ -51,7 +51,7 @@ gulp.task('pot', function() {
         .pipe(wpPot( {
             package: 'Google Places Reviews Free',
             domain: 'gpr',
-            destFile:'gpr.pot',
+            destFile:'en_US.pot',
             lastTranslator: '',
             team: 'WordImpress <info@wordimpress.com>'
         } ))
