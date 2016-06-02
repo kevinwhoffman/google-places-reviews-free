@@ -2,9 +2,9 @@
 Contributors: wordimpress, dlocc, webdevmattcrom
 Donate link: http://wordimpress.com/
 Tags: google, reviews, google reviews, google places, google places reviews, google review widget, google business reviews, google review, review, google place review
-Requires at least: 3.8
+Requires at least: 4.0
 Tested up to: 4.5.2
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPL2
 
 Display Google Places Reviews on your WordPress website and help boost consumer confidence and search engine optimization.
@@ -35,7 +35,7 @@ Google Places Reviews allows you to display up to 3 business reviews with the fr
 
 = Get More Features with Google Places Reviews PRO! =
 
-[Upgrade to Google Places Reviews Pro](http://wordimpress.com/plugins/google-places-reviews-pro/ "Upgrade to Google Places Reviews Pro").
+[Upgrade to Google Places Reviews Pro](https://wordimpress.com/plugins/google-places-reviews-pro/ "Upgrade to Google Places Reviews Pro").
 
 Use Promo Code: `googleplaces20off` for a 20% discount!
 
@@ -93,6 +93,10 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 5. The plugins settings page found under Settings > Google Reviews
 
 == Changelog ==
+
+= 1.4 =
+* Fix: z-index conflict with Custom Sidebars plugin by WPMUDev
+* Fix: Error returned from google when API url contained malformed characters - now we sanitize the URL before passing it to Google's API
 
 = 1.3 =
 * Added compatibility with Siteorigin's PageBuilder
