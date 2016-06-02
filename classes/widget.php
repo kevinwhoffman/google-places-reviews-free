@@ -8,8 +8,19 @@
  */
 class Google_Places_Reviews extends WP_Widget {
 
-	public $options; //Plugin Options from Options Panel
-	public $api_key; //Plugin Options from Options Panel
+	/**
+	 * Plugin Options from Options Panel
+	 *
+	 * @var mixed|void
+	 */
+	public $options;
+
+	/**
+	 * Google API key
+	 *
+	 * @var string
+	 */
+	public $api_key;
 
 
 	/**
@@ -43,6 +54,7 @@ class Google_Places_Reviews extends WP_Widget {
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
+
 		parent::__construct(
 			'gpr_widget', // Base ID
 			'Google Places Reviews', // Name
@@ -56,25 +68,34 @@ class Google_Places_Reviews extends WP_Widget {
 		//API key (muy importante!)
 		$this->api_key = $this->options['google_places_api_key'];
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'add_gpr_widget_scripts' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'add_gpr_admin_widget_scripts' ) );
-		add_action( 'wp_ajax_clear_widget_cache', array( $this, 'gpr_clear_widget_cache' ) );
-
+		//Hooks
+		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_widget_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_widget_scripts' ) );
+		add_action( 'wp_ajax_clear_widget_cache', array( $this, 'clear_widget_cache' ) );
 
 	}
 
-	//Load Widget JS Script ONLY on Widget page
-	function add_gpr_admin_widget_scripts( $hook ) {
+	/**
+	 * Admin Widget Scripts
+	 *
+	 * @description: Load Widget JS Script ONLY on Widget page
+	 *
+	 * @param $hook
+	 */
+	function admin_widget_scripts( $hook ) {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		if ( $hook == 'widgets.php' || ($hook == 'customize.php' && defined('SITEORIGIN_PANELS_VERSION') ) ) {
+		if ( $hook == 'widgets.php' || ( $hook == 'customize.php' && defined( 'SITEORIGIN_PANELS_VERSION' ) ) ) {
 
-			wp_enqueue_script( 'gpr_google_places_gmaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places', array( 'jquery' ) );
+			wp_register_script( 'gpr_google_places_gmaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places', array( 'jquery' ) );
+			wp_enqueue_script( 'gpr_google_places_gmaps' );
 
-			//Enqueue
-			wp_enqueue_script( 'gpr_widget_admin_tipsy', plugins_url( 'assets/js/gpr-tipsy' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
-			wp_enqueue_script( 'gpr_widget_admin_scripts', plugins_url( 'assets/js/admin-widget' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
+			wp_register_script( 'gpr_widget_admin_tipsy', plugins_url( 'assets/js/gpr-tipsy' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
+			wp_enqueue_script( 'gpr_widget_admin_tipsy' );
+
+			wp_register_script( 'gpr_widget_admin_scripts', plugins_url( 'assets/js/admin-widget' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
+			wp_enqueue_script( 'gpr_widget_admin_scripts' );
 
 			// in javascript, object properties are accessed as ajax_object.ajax_url, ajax_object.we_value
 			wp_localize_script(
@@ -82,8 +103,12 @@ class Google_Places_Reviews extends WP_Widget {
 				array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
 			);
 
-			wp_enqueue_style( 'gpr_widget_admin_tipsy', plugins_url( 'assets/css/gpr-tipsy' . $suffix . '.css', dirname( __FILE__ ) ) );
-			wp_enqueue_style( 'gpr_widget_admin_css', plugins_url( 'assets/css/admin-widget' . $suffix . '.css', dirname( __FILE__ ) ) );
+			wp_register_style( 'gpr_widget_admin_tipsy', plugins_url( 'assets/css/gpr-tipsy' . $suffix . '.css', dirname( __FILE__ ) ) );
+			wp_enqueue_style( 'gpr_widget_admin_tipsy' );
+
+
+			wp_register_style( 'gpr_widget_admin_css', plugins_url( 'assets/css/admin-widget' . $suffix . '.css', dirname( __FILE__ ) ) );
+			wp_enqueue_style( 'gpr_widget_admin_css' );
 
 
 		}
@@ -94,13 +119,13 @@ class Google_Places_Reviews extends WP_Widget {
 	/**
 	 * Adds Google Places Reviews Stylesheets
 	 */
-	function add_gpr_widget_scripts() {
+	function frontend_widget_scripts() {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		$gpr_css = plugins_url( 'assets/css/google-places-reviews' . $suffix . '.css', dirname( __FILE__ ) );
 
-		if ( $this->options["disable_css"] !== "on" ) {
+		if ( $this->options['disable_css'] !== 'on' ) {
 			wp_register_style( 'gpr_widget', $gpr_css );
 			wp_enqueue_style( 'gpr_widget' );
 		}
@@ -112,11 +137,12 @@ class Google_Places_Reviews extends WP_Widget {
 	 *
 	 * @see WP_Widget::widget()
 	 *
-	 * @param array $args     Widget arguments.
+	 * @param array $args Widget arguments.
 	 * @param array $instance Saved values from database.
 	 */
 	function widget( $args, $instance ) {
 
+		//@TODO: Remove usage
 		extract( $args );
 
 		//loop through options array and save variables for usage within function
@@ -183,9 +209,10 @@ class Google_Places_Reviews extends WP_Widget {
 		$response            = get_transient( 'gpr_widget_api_' . $transient_unique_id );
 		$widget_options      = get_transient( 'gpr_widget_options_' . $transient_unique_id );
 		$serialized_instance = serialize( $instance );
+		$cache               = strtolower( $cache );
 
 		// Cache: cache option is enabled
-		if ( $cache !== 'None' ) {
+		if ( $cache !== 'none' ) {
 
 			// Check for an existing copy of our cached/transient data
 			// also check to see if widget options have updated; this will bust the cache
@@ -221,7 +248,7 @@ class Google_Places_Reviews extends WP_Widget {
 				}
 
 				// Cache data wasn't there, so regenerate the data and save the transient
-				$response = $this->grp_plugin_curl( $google_places_url );
+				$response = $this->get_reviews( $google_places_url );
 				set_transient( 'gpr_widget_api_' . $transient_unique_id, $response, $expiration );
 				set_transient( 'gpr_widget_options_' . $transient_unique_id, $serialized_instance, $expiration );
 
@@ -231,7 +258,7 @@ class Google_Places_Reviews extends WP_Widget {
 		} else {
 
 			//No Cache option enabled;
-			$response = $this->grp_plugin_curl( $google_places_url );
+			$response = $this->get_reviews( $google_places_url );
 
 		}
 
@@ -249,7 +276,7 @@ class Google_Places_Reviews extends WP_Widget {
 			$this->output_error_message( __( '<strong>INVALID REQUEST</strong>: Please check that this widget has a Google Place ID set.', 'gpr' ), 'error' );
 			$this->delete_transient_cache( $transient_unique_id );
 
-			return;
+			return false;
 
 		} elseif ( isset( $response['error_message'] ) && ! empty( $response['error_message'] ) ) {
 
@@ -309,8 +336,9 @@ class Google_Places_Reviews extends WP_Widget {
 
 
 	/**
-	 * @DESC: Saves the widget options
-	 * @SEE WP_Widget::update
+	 * Update Widget
+	 *
+	 * @description: Saves the widget options
 	 */
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
@@ -325,7 +353,10 @@ class Google_Places_Reviews extends WP_Widget {
 
 
 	/**
-	 * Back-end widget form.
+	 * Widget Form
+	 *
+	 * @description: Responsible for outputting the backend widget form.
+	 *
 	 * @see WP_Widget::form()
 	 */
 	function form( $instance ) {
@@ -350,9 +381,18 @@ class Google_Places_Reviews extends WP_Widget {
 
 
 	/**
-	 * @DESC: CURLs the Google Places API with our url parameters and returns JSON response
+	 * cURL (wp_remote_get) the Google Places API
+	 *
+	 * @description: CURLs the Google Places API with our url parameters and returns JSON response
+	 *
+	 * @param $url
+	 *
+	 * @return array|mixed
 	 */
-	function grp_plugin_curl( $url ) {
+	function get_reviews( $url ) {
+
+		//Sanitize the URL
+		$url = esc_url_raw( $url );
 
 		// Send API Call using WP's HTTP API
 		$data = wp_remote_get( $url );
@@ -376,6 +416,20 @@ class Google_Places_Reviews extends WP_Widget {
 			$response = json_decode( $data['body'], true );
 		}
 
+		//Get Reviewers Avatars
+		$response = $this->get_reviewers_avatars( $response );
+
+		//Get Business Avatar
+		$response = $this->get_business_avatar( $response );
+
+
+		//Google response data in JSON format
+		return $response;
+
+	}
+
+
+	public function get_reviewers_avatars( $response ) {
 		//GPR Reviews Array
 		$gpr_reviews = array();
 
@@ -388,12 +442,12 @@ class Google_Places_Reviews extends WP_Widget {
 				$user_id = isset( $review['author_url'] ) ? str_replace( 'https://plus.google.com/', '', $review['author_url'] ) : '';
 
 				//Add args to
-				$request_url = add_query_arg(
+				$request_url = add_query_arg(esc_url(
 					array(
 						'alt' => 'json',
 					),
 					'https://picasaweb.google.com/data/entry/api/user/' . $user_id
-				);
+				) );
 
 				$avatar_get      = wp_remote_get( $request_url );
 				$avatar_get_body = json_decode( wp_remote_retrieve_body( $avatar_get ), true );
@@ -413,9 +467,21 @@ class Google_Places_Reviews extends WP_Widget {
 
 			//merge custom reviews array with response
 			$response = array_merge( $response, array( 'gpr_reviews' => $gpr_reviews ) );
-
-
 		}
+
+		return $response;
+
+	}
+
+	/**
+	 * Get Business Avatar
+	 *
+	 * @description: Gets the business Avatar and
+	 *
+	 * @return array
+	 */
+	function get_business_avatar( $response ) {
+
 		//Business Avatar
 		if ( isset( $response['result']['photos'] ) ) {
 
@@ -429,15 +495,13 @@ class Google_Places_Reviews extends WP_Widget {
 				'https://maps.googleapis.com/maps/api/place/photo'
 			);
 
-			$response = array_merge( $response, array( 'place_avatar' => $request_url ) );
+			$response = array_merge( $response, array( 'place_avatar' => esc_url( $request_url ) ) );
 
 		}
 
-		//Google response data in JSON format
 		return $response;
 
 	}
-
 
 	/**
 	 * Enqueue Widget Theme Scripts
@@ -601,7 +665,7 @@ class Google_Places_Reviews extends WP_Widget {
 	/**
 	 * AJAX Clear Widget Cache
 	 */
-	function gpr_clear_widget_cache() {
+	function clear_widget_cache() {
 
 		if ( isset( $_POST['transient_id_1'] ) && isset( $_POST['transient_id_2'] ) ) {
 
@@ -613,7 +677,7 @@ class Google_Places_Reviews extends WP_Widget {
 			echo "Error: Transient ID not set. Cache not cleared.";
 		}
 
-		die();
+		wp_die();
 
 	}
 
@@ -622,7 +686,6 @@ class Google_Places_Reviews extends WP_Widget {
 	 *
 	 * Removes the transient cache when an error is displayed as to not cache error results
 	 */
-
 	function delete_transient_cache( $transient_unique_id ) {
 		delete_transient( 'gpr_widget_api_' . $transient_unique_id );
 		delete_transient( 'gpr_widget_options_' . $transient_unique_id );
