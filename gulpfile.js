@@ -9,7 +9,6 @@ var wpPot = require('gulp-wp-pot');
 //POT file task
 gulp.task('pot', function () {
     return gulp.src('**/*.php')
-        .pipe(sort())
         .pipe(wpPot({
             package: 'Google Places Reviews Pro',
             domain: 'gpr',

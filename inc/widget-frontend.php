@@ -31,7 +31,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 
 			<div class="gpr-business-header gpr-clearfix">
 
-				<div class="gpr-business-avatar" style="background-image: url(<?php echo $place_avatar; ?>)"></div>
+				<div class="gpr-business-avatar" style="background-image: url('<?php echo $place_avatar; ?>');"></div>
 
 				<div class="gpr-header-content-wrap gpr-clearfix">
 					<span class="gpr-business-name"><a href="<?php echo $website; ?>" title="<?php echo $name; ?>" <?php echo $target_blank . $no_follow; ?>><span><?php echo $name; ?></span></a></span>
@@ -64,7 +64,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 
 			<div class="gpr-reviews-wrap">
 				<?php
-				$counter = 0;
+				$counter      = 0;
 				$review_limit = isset( $review_limit ) ? $review_limit : 3;
 
 				//Loop Google Places reviews
@@ -89,7 +89,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 
 							<div class="gpr-review-header gpr-clearfix">
 								<div class="gpr-review-avatar">
-									<img src="<?php echo $avatar; ?>" alt="<?php echo $author_name; ?>" title="<?php echo $author_name; ?>" />
+									<img src="<?php echo $avatar; ?>" alt="<?php echo $author_name; ?>" title="<?php echo $author_name; ?>"/>
 								</div>
 								<div class="gpr-review-info gpr-clearfix">
 									<span class="grp-reviewer-name">
@@ -117,17 +117,17 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 
 				<?php
 				$googleplus_page = isset( $response['result']['url'] ) ? $response['result']['url'] : '';
-				if ( $ratings_count > 5 && !empty( $googleplus_page ) ) {
+				if ( $ratings_count > 5 && ! empty( $googleplus_page ) ) {
 
-				?>
+					?>
 					<div class="gpr-read-all-reviews">
-						<a href="<?php echo esc_url($googleplus_page) ?>" <?php echo $target_blank . $no_follow; ?>><?php printf( esc_html__( 'Read All %d Reviews', 'gpr' ), $ratings_count ); ?></a>
+						<a href="<?php echo esc_url( $googleplus_page ) ?>" <?php echo $target_blank . $no_follow; ?>><?php printf( esc_html__( 'Read All %d Reviews', 'gpr' ), $ratings_count ); ?></a>
 					</div>
 				<?php } // endif read all reviews button ?>
 
 			</div><!--/.gpr-reviews -->
 
-		<?php
+			<?php
 		} //end review if
 		else {
 			//No Reviews for this location

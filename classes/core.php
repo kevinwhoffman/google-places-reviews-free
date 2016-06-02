@@ -4,10 +4,7 @@
 if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 
 	/**
-	 * Sunrise Plugin Framework Class
-	 *
-	 * @author  Vladimir Anokhin <ano.vladimir@gmail.com>
-	 * @link    http://gndev.info/sunrise/
+	 * Class GPR_Plugin_Framework
 	 */
 	class GPR_Plugin_Framework {
 
@@ -57,7 +54,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 		 * Constructor
 		 *
 		 * @param        $file
-		 * @param array  $args
+		 * @param array $args
 		 */
 		function __construct( $file, $args = array() ) {
 			// Default args
@@ -74,21 +71,21 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 			// Read plugin meta
 			$this->meta = get_plugin_data( $this->file, false );
 			// Init plugin data
-			$this->basename   = plugin_basename( $this->file );
-			$this->slug       = sanitize_key( $this->meta['Name'] );
-			$this->version    = sanitize_text_field( $this->meta['Version'] );
+			$this->basename = plugin_basename( $this->file );
+			$this->slug     = sanitize_key( $this->meta['Name'] );
+			$this->version  = sanitize_text_field( $this->meta['Version'] );
 //			$this->textdomain = sanitize_html_class( $this->meta['TextDomain'] );
-			$this->name       = $this->meta['Name'];
-			$this->url        = plugins_url( '', $this->file );
-			$this->option     = $this->slug . '_options';
-			$this->includes   = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['includes'], '/' ) ) );
-			$this->views      = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['views'], '/' ) ) );
-			$this->assets     = trim( $this->args['assets'], '/' );
+			$this->name     = $this->meta['Name'];
+			$this->url      = plugins_url( '', $this->file );
+			$this->option   = $this->slug . '_options';
+			$this->includes = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['includes'], '/' ) ) );
+			$this->views    = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['views'], '/' ) ) );
+			$this->assets   = trim( $this->args['assets'], '/' );
 			// Make plugin available for translation
 			load_plugin_textdomain( 'gpr', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
 			//define a version constant
-			define('GPR_VERSION', $this->version);
+			define( 'GPR_VERSION', $this->version );
 
 		}
 
@@ -118,7 +115,10 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 			wp_register_script( 'core-plugin-framework-form', $this->assets( 'js', 'form.js' ), array( 'jquery' ), $this->version, false );
 			wp_register_script( 'core-plugin-fitvids', $this->assets( 'js', 'jquery.fitvids.js' ), array( 'core-plugin-framework-form' ), $this->version, false );
 
-			wp_register_script( 'core-plugin-framework', $this->assets( 'js', 'core.js' ), array( 'core-plugin-framework-form', 'core-plugin-fitvids' ), $this->version, false );
+			wp_register_script( 'core-plugin-framework', $this->assets( 'js', 'core.js' ), array(
+				'core-plugin-framework-form',
+				'core-plugin-fitvids'
+			), $this->version, false );
 		}
 
 		/**
@@ -133,7 +133,12 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 			}
 			foreach (
 				array(
-					'jquery', 'media-upload', 'thickbox', 'farbtastic', 'core-plugin-framework-form', 'core-plugin-fitvids',
+					'jquery',
+					'media-upload',
+					'thickbox',
+					'farbtastic',
+					'core-plugin-framework-form',
+					'core-plugin-fitvids',
 					'core-plugin-framework'
 				) as $script
 			) {
@@ -148,8 +153,10 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 			return implode(
 				'/', array_filter(
 					array(
-						trim( $this->url, '/' ), trim( $this->assets, '/' ),
-						trim( $type, '/' ), trim( $file, '/' )
+						trim( $this->url, '/' ),
+						trim( $this->assets, '/' ),
+						trim( $type, '/' ),
+						trim( $file, '/' )
 					)
 				)
 			);
@@ -166,7 +173,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 				// Loop through available options
 				foreach ( (array) $this->options as $value ) {
 					if ( isset( $value['id'] ) ) {
-						$defaults[$value['id']] = empty( $value['std'] ) ? '' : $value['std'];
+						$defaults[ $value['id'] ] = empty( $value['std'] ) ? '' : $value['std'];
 					}
 				}
 				// Insert default options
@@ -185,7 +192,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 			// Get options from database
 			$options = get_option( $this->option );
 			// Check option is specified
-			$value = ( $option ) ? $options[$option] : $options;
+			$value = ( $option ) ? $options[ $option ] : $options;
 
 			// Return result
 			return ( is_array( $value ) ) ? array_filter( $value, 'esc_attr' ) : esc_attr( stripslashes( $value ) );
@@ -194,7 +201,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 		/**
 		 * Update single option value
 		 *
-		 * @param mixed $key   Option ID to update
+		 * @param mixed $key Option ID to update
 		 * @param mixed $value New value
 		 *
 		 * @return mixed $option Returns option by specified key
@@ -205,7 +212,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 			$new_settings = array();
 			// Prepare data
 			foreach ( $settings as $id => $val ) {
-				$new_settings[$id] = ( $id == $key ) ? $value : $val;
+				$new_settings[ $id ] = ( $id == $key ) ? $value : $val;
 			}
 
 			// Update option and return operation result
@@ -227,7 +234,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 				// Prepare data
 				foreach ( $this->options as $value ) {
 					if ( isset( $value['id'] ) && $value['std'] ) {
-						$new_options[$value['id']] = $value['std'];
+						$new_options[ $value['id'] ] = $value['std'];
 					}
 				}
 				// Save new options
@@ -247,8 +254,8 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 				$new_options = array();
 				// Prepare data
 				foreach ( $this->options as $value ) {
-					$new_options[$value['id']] = ( is_array( $_POST[$value['id']] ) ) ? $_POST[$value['id']]
-						: htmlspecialchars( $_POST[$value['id']] );
+					$new_options[ $value['id'] ] = ( is_array( $_POST[ $value['id'] ] ) ) ? $_POST[ $value['id'] ]
+						: htmlspecialchars( $_POST[ $value['id'] ] );
 				}
 				// Save new options
 				if ( update_option( $this->option, $new_options ) ) {
@@ -267,7 +274,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 		/**
 		 * Register options page
 		 *
-		 * @param array $args    Options page config
+		 * @param array $args Options page config
 		 * @param array $options Set of fields for options page
 		 */
 		function add_options_page( $args, $options = array() ) {
