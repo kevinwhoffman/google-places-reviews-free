@@ -3,8 +3,8 @@ Contributors: wordimpress, dlocc, webdevmattcrom
 Donate link: http://wordimpress.com/
 Tags: google, reviews, google reviews, google places, google places reviews, google review widget, google business reviews, google review, review, google place review
 Requires at least: 3.8
-Tested up to: 4.2.1
-Stable tag: 1.2.1
+Tested up to: 4.5.2
+Stable tag: 1.3
 License: GPL2
 
 Display Google Places Reviews on your WordPress website and help boost consumer confidence and search engine optimization.
@@ -21,16 +21,6 @@ Easily display Google Reviews on your WordPress website using a powerful and int
 
 This plugin allows you to display Google reviews on your WordPress website. Why is this important? Positive reviews on websites like Google help businesses gain additional exposure and further enhance their online credibility. A [recent study](http://marketingland.com/survey-customers-more-frustrated-by-how-long-it-takes-to-resolve-a-customer-service-issue-than-the-resolution-38756) conducted by Dimensional Research found that the buying decisions of 90% of consumers are influenced by positive online reviews. Additionally, a [2012 study published on Search Engine Land](http://searchengineland.com/study-72-of-consumers-trust-online-reviews-as-much-as-personal-recommendations-114152 "View the Article Online") found that 72% of consumers trust online reviews as much as personal recommendations. If you do the research it quickly becomes clear. Positive reviews add substantial credibility to any business and can lead to increased conversion rates and higher sales.
 
-There is significant data that shows how much consumers care about online reviews but very little information about what businesses are doing to respond to this phenomenon. How about displaying reviews on your WordPress website from Google?
-
-Google Places Reviews allows you to display up to 3 business reviews with the free version and 5 with the Pro version. Setup is quick and easy. Simply install the plugin, insert your Google API (free and documented), and drag the widget into any sidebar to configure the options.
-
-= Google Places Reviews Pro =
-
-[Upgrade to Google Places Reviews Pro](http://wordimpress.com/plugins/google-places-reviews-pro/ "Upgrade to Google Places Reviews Pro").
-
-Use Promo Code: `googleplaces20off` for a 20% discount!
-
 = Plugin Features =
 
 * Google Business Reviews - Display up to 3 business reviews per location.
@@ -38,6 +28,16 @@ Use Promo Code: `googleplaces20off` for a 20% discount!
 * Versatile Widget Themes - Choose from a selection of stunning widget themes that fit light and dark color schemes that make integration with your website design effortless.
 * Google Places Autocomplete - Easily lookup businesses in your area through the widget interface using the power of Google search.
 * Actively Supported and Developed - We are a team of expert developers based in San Diego, California and we stand by our work. Got a problem? Hit us up.
+
+There is significant data that shows how much consumers care about online reviews but very little information about what businesses are doing to respond to this phenomenon. How about displaying reviews on your WordPress website from Google?
+
+Google Places Reviews allows you to display up to 3 business reviews with the free version and 5 with the Pro version. Setup is quick and easy. Simply install the plugin, insert your Google API (free and documented), and drag the widget into any sidebar to configure the options.
+
+= Get More Features with Google Places Reviews PRO! =
+
+[Upgrade to Google Places Reviews Pro](http://wordimpress.com/plugins/google-places-reviews-pro/ "Upgrade to Google Places Reviews Pro").
+
+Use Promo Code: `googleplaces20off` for a 20% discount!
 
 = Google Places Reviews Pro Version Features =
 
@@ -53,9 +53,10 @@ Google Places Reviews Pro is a significant upgrade to Google Places Reviews that
 
 Why limit your reviews to just Google Places Reviews? Check out our other free business reviews plugins to add to your site as well:
 
+* [Facebook Reviews Pro](https://wordimpress.org/plugins/facebook-reviews-pro "Facebook Reviews Pro")
 * [Yelp Widget Pro](https://wordpress.org/plugins/yelp-widget-pro "Yelp Widget Pro")
 * [Yellow Pages Reviews](https://wordpress.org/plugins/yellow-pages-reviews/ "Google Places Reviews")
-* Get all three of our Premium Business Reviews plugins for one low price. [Premium Business Reviews Bundle](https://wordimpress.com/plugins/business-reviews-bundle/?utm_source=WordPress.org&utm_medium=readme&utm_campaign=Yellow%20Pages%20Repo "Premium Business Reviews Bundle")
+* Get all **FOUR** of our Premium Business Reviews plugins for one low price. [Premium Business Reviews Bundle](https://wordimpress.com/plugins/business-reviews-bundle/?utm_source=WordPress.org&utm_medium=readme&utm_campaign=Google%20Places%20Repo "Premium Business Reviews Bundle")
 
 == Installation ==
 
@@ -92,6 +93,11 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 5. The plugins settings page found under Settings > Google Reviews
 
 == Changelog ==
+
+= 1.3 =
+* Added compatibility with Siteorigin's PageBuilder
+* Added compatibility with WordPress Customizer
+* Added compatibility with WPMUDEV's Custom Sidebar's plugin
 
 = 1.2.1 =
 * Fix: Broken avatar images displayed for some reviews where the user had not set an avatar
