@@ -99,7 +99,6 @@ class Google_Places_Reviews extends WP_Widget {
 			wp_register_script( 'gpr_widget_admin_scripts', plugins_url( 'assets/js/admin-widget' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
 			wp_enqueue_script( 'gpr_widget_admin_scripts' );
 
-			// in javascript, object properties are accessed as ajax_object.ajax_url, ajax_object.we_value
 			wp_localize_script(
 				'gpr_widget_admin_scripts', 'ajax_object',
 				array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
@@ -381,7 +380,7 @@ class Google_Places_Reviews extends WP_Widget {
 		include( GPR_PLUGIN_PATH . '/inc/widget-form.php' );
 
 
-	} 
+	}
 
 
 	/**
@@ -675,16 +674,16 @@ class Google_Places_Reviews extends WP_Widget {
 	/**
 	 * AJAX Clear Widget Cache
 	 */
-	function clear_widget_cache() {
+	public function clear_widget_cache() {
 
 		if ( isset( $_POST['transient_id_1'] ) && isset( $_POST['transient_id_2'] ) ) {
 
 			delete_transient( $_POST['transient_id_1'] );
 			delete_transient( $_POST['transient_id_2'] );
-			echo "Cache cleared";
+			echo __( 'Cache cleared', 'gpr' );
 
 		} else {
-			echo "Error: Transient ID not set. Cache not cleared.";
+			echo __( 'Error: Transient ID not set. Cache not cleared.', 'gpr' );
 		}
 
 		wp_die();
@@ -701,4 +700,4 @@ class Google_Places_Reviews extends WP_Widget {
 		delete_transient( 'gpr_widget_options_' . $transient_unique_id );
 	}
 
-} //end Google_Places_Reviews Class
+} 
