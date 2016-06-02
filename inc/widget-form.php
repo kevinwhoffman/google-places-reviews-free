@@ -1,16 +1,17 @@
 <?php
-/*
- *  @description: Widget form options in WP-Admin
- *  @since 1.0
+/**
+ * Google Places Reviews Widget Form
+ *
+ * @description: Widget form options in WP-Admin
+ * @since 1.0
  */
-
 ?>
 
 <!-- Title -->
 <p>
 	<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Widget Title', 'gpr' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
-	       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
+	       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>"/>
 </p>
 
 
@@ -20,7 +21,7 @@
 		<label for="<?php echo $this->get_field_id( 'autocomplete' ); ?>"><?php _e( 'Location Lookup', 'gpr' ); ?>: <?php echo gpr_admin_tooltip( 'autocomplete' ); ?></label>
 		<input class="widefat gpr-autocomplete" id="<?php echo $this->get_field_id( 'autocomplete' ); ?>"
 		       name="<?php echo $this->get_field_name( 'autocomplete' ); ?>" type="text"
-		       value="<?php echo( empty( $autocomplete ) ? '' : $autocomplete ) ?>" />
+		       value="<?php echo( empty( $autocomplete ) ? '' : $autocomplete ) ?>"/>
 	</p>
 	<!-- Google Maps Autocomplete Label -->
 	<p class="gpr-place-type">
@@ -59,17 +60,17 @@
 		       id="<?php echo $this->get_field_id( 'location' ); ?>"
 		       name="<?php echo $this->get_field_name( 'location' ); ?>" type="text"
 		       placeholder="<?php echo( empty( $location ) ? 'No location set' : '' ); ?>"
-		       value="<?php echo $location; ?>" />
+		       value="<?php echo $location; ?>"/>
 	</p>
 
 	<p style="display:none;">
 		<label for="<?php echo $this->get_field_id( 'reference' ); ?>"><?php _e( 'Location Reference ID', 'gpr' ); ?>:</label>
-		<input class="widefat reference" onClick="this.setSelectionRange(0, this.value.length)" readonly id="<?php echo $this->get_field_id( 'reference' ); ?>" name="<?php echo $this->get_field_name( 'reference' ); ?>" type="text" placeholder="<?php echo( empty( $reference ) ? 'No location set' : '' ); ?>" value="<?php echo $reference; ?>" />
+		<input class="widefat reference" onClick="this.setSelectionRange(0, this.value.length)" readonly id="<?php echo $this->get_field_id( 'reference' ); ?>" name="<?php echo $this->get_field_name( 'reference' ); ?>" type="text" placeholder="<?php echo( empty( $reference ) ? 'No location set' : '' ); ?>" value="<?php echo $reference; ?>"/>
 	</p>
 
 	<p style="margin-bottom:0;">
 		<label for="<?php echo $this->get_field_id( 'place_id' ); ?>"><?php _e( 'Location Place ID', 'gpr' ); ?>: <?php echo gpr_admin_tooltip( 'place_id' ); ?></label>
-		<input class="widefat place_id" onClick="this.setSelectionRange(0, this.value.length)" readonly id="<?php echo $this->get_field_id( 'place_id' ); ?>" name="<?php echo $this->get_field_name( 'place_id' ); ?>" type="text" placeholder="<?php echo( empty( $place_id ) ? 'No location set' : '' ); ?>" value="<?php echo $place_id; ?>" />
+		<input class="widefat place_id" onClick="this.setSelectionRange(0, this.value.length)" readonly id="<?php echo $this->get_field_id( 'place_id' ); ?>" name="<?php echo $this->get_field_name( 'place_id' ); ?>" type="text" placeholder="<?php echo( empty( $place_id ) ? 'No location set' : '' ); ?>" value="<?php echo $place_id; ?>"/>
 	</p>
 
 </div>
@@ -81,7 +82,7 @@
 
 	<!-- Filter Reviews -->
 	<p class="pro-field">
-		<label for="<?php echo $this->get_field_id( 'review_filter' ); ?>"><?php _e( 'Minimum Review Rating:', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'review_filter' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'review_filter' ); ?>"><?php _e( 'Minimum Review Rating:', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'review_filter' ); ?></label>
 
 		<select id="<?php echo $this->get_field_id( 'review_filter' ); ?>" class="widefat"
 		        name="<?php echo $this->get_field_name( 'review_filter' ); ?>" disabled>
@@ -117,7 +118,7 @@
 
 	<!-- Review Limit -->
 	<p>
-		<label for="<?php echo $this->get_field_id( 'review_limit' ); ?>"><?php _e( 'Limit Number of Reviews:', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'review_limit' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'review_limit' ); ?>"><?php _e( 'Limit Number of Reviews:', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'review_limit' ); ?></label>
 		<select name="<?php echo $this->get_field_name( 'review_limit' ); ?>" id="<?php echo $this->get_field_id( 'review_limit' ); ?>"
 		        class="widefat">
 			<?php
@@ -168,14 +169,14 @@
 		<input id="<?php echo $this->get_field_id( 'hide_header' ); ?>"
 		       name="<?php echo $this->get_field_name( 'hide_header' ); ?>" type="checkbox"
 		       value="1" <?php checked( '1', $hide_header ); ?> />
-		<label for="<?php echo $this->get_field_id( 'hide_header' ); ?>"><?php _e( 'Hide Business Information', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'hide_header' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'hide_header' ); ?>"><?php _e( 'Hide Business Information', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'hide_header' ); ?></label>
 	</p>
 
 
 	<!-- Hide x Rating -->
 	<p>
 		<input id="<?php echo $this->get_field_id( 'hide_out_of_rating' ); ?>" name="<?php echo $this->get_field_name( 'hide_out_of_rating' ); ?>" type="checkbox" value="1" <?php checked( '1', $hide_out_of_rating ); ?> />
-		<label for="<?php echo $this->get_field_id( 'hide_out_of_rating' ); ?>"><?php _e( 'Hide "x out of 5 stars" text', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'hide_out_of_rating' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'hide_out_of_rating' ); ?>"><?php _e( 'Hide "x out of 5 stars" text', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'hide_out_of_rating' ); ?></label>
 	</p>
 
 	<!-- Show Google Image -->
@@ -183,7 +184,7 @@
 		<input id="<?php echo $this->get_field_id( 'hide_google_image' ); ?>"
 		       name="<?php echo $this->get_field_name( 'hide_google_image' ); ?>" type="checkbox"
 		       value="1" <?php checked( '1', $hide_google_image ); ?> />
-		<label for="<?php echo $this->get_field_id( 'hide_google_image' ); ?>"><?php _e( 'Hide Google logo', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'google_image' ); ?> </label>
+		<label for="<?php echo $this->get_field_id( 'hide_google_image' ); ?>"><?php _e( 'Hide Google logo', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'google_image' ); ?> </label>
 	</p>
 
 
@@ -197,7 +198,7 @@
 
 	<!-- Transient / Cache -->
 	<p>
-		<label for="<?php echo $this->get_field_id( 'cache' ); ?>"><?php _e( 'Cache Data:', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'cache' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'cache' ); ?>"><?php _e( 'Cache Data:', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'cache' ); ?></label>
 
 		<select name="<?php echo $this->get_field_name( 'cache' ); ?>" id="<?php echo $this->get_field_id( 'cache' ); ?>"
 		        class="widefat">
@@ -240,19 +241,19 @@
 	<!-- Disable title output checkbox -->
 	<p>
 		<input id="<?php echo $this->get_field_id( 'disable_title_output' ); ?>" name="<?php echo $this->get_field_name( 'disable_title_output' ); ?>" type="checkbox" value="1" <?php checked( '1', $disable_title_output ); ?>/>
-		<label for="<?php echo $this->get_field_id( 'disable_title_output' ); ?>"><?php _e( 'Disable Title Output', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'disable_title_output' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'disable_title_output' ); ?>"><?php _e( 'Disable Title Output', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'disable_title_output' ); ?></label>
 	</p>
 
 	<!-- Open Links in New Window -->
 	<p>
 		<input id="<?php echo $this->get_field_id( 'target_blank' ); ?>" name="<?php echo $this->get_field_name( 'target_blank' ); ?>" type="checkbox" value="1" <?php checked( '1', $target_blank ); ?>/>
-		<label for="<?php echo $this->get_field_id( 'target_blank' ); ?>"><?php _e( 'Open Links in New Window', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'target_blank' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'target_blank' ); ?>"><?php _e( 'Open Links in New Window', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'target_blank' ); ?></label>
 	</p>
 
 	<!-- No Follow Links -->
 	<p>
 		<input id="<?php echo $this->get_field_id( 'no_follow' ); ?>" name="<?php echo $this->get_field_name( 'no_follow' ); ?>" type="checkbox" value="1" <?php checked( '1', $no_follow ); ?> />
-		<label for="<?php echo $this->get_field_id( 'no_follow' ); ?>"><?php _e( 'No Follow Links', 'gpr' ); ?> <?php echo gpr_admin_tooltip( 'no_follow' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'no_follow' ); ?>"><?php _e( 'No Follow Links', 'gpr' ); ?><?php echo gpr_admin_tooltip( 'no_follow' ); ?></label>
 	</p>
 
 </div>

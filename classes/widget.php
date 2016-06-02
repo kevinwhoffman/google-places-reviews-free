@@ -439,6 +439,7 @@ class Google_Places_Reviews extends WP_Widget {
 	 * @return array
 	 */
 	public function get_reviewers_avatars( $response ) {
+
 		//GPR Reviews Array
 		$gpr_reviews = array();
 
