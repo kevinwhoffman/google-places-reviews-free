@@ -31,16 +31,17 @@
      * @description: When clicked it clears the transients for this specific business
      */
     $(document).on('click', '.gpr-clear-cache', function (e) {
+
         e.preventDefault();
         var $this = $(this);
 
         $this.next('.cache-clearing-loading').fadeIn('fast');
         var data = {
-            action: 'clear_widget_cache',
+            action: 'gpr_free_clear_widget_cache',
             transient_id_1: $(this).data('transient-id-1'),
             transient_id_2: $(this).data('transient-id-2')
         };
-
+      
         $.post(ajaxurl, data, function (response) {
             console.log(response);
             $('.cache-clearing-loading').hide();

@@ -73,7 +73,7 @@ class Google_Places_Reviews extends WP_Widget {
 		//Hooks
 		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_widget_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_widget_scripts' ) );
-		add_action( 'wp_ajax_clear_widget_cache', array( $this, 'clear_widget_cache' ) );
+		add_action( 'wp_ajax_gpr_free_clear_widget_cache', array( $this, 'clear_widget_cache' ) );
 
 	}
 
