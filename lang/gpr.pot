@@ -31,28 +31,36 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: classes/widget.php:125
+#: classes/widget.php:129
 msgid "Display user reviews for any location found on Google Places."
 msgstr ""
 
-#: classes/widget.php:319
+#: classes/widget.php:325
 msgid "There is no location set for this widget yet."
 msgstr ""
 
-#: classes/widget.php:551
+#: classes/widget.php:557
 msgid "<strong>INVALID REQUEST</strong>: Please check that this widget has a Google Place ID set."
 msgstr ""
 
-#: classes/widget.php:731
-msgid "<p><strong>Notice: </strong>No Google Places API key detected. You will need to create an API key to use Google Places Reviews. API keys are manage through the <a href=\"%1$s\" class=\"new-window\" target=\"_blank\" class=\"new-window\">Google API Console</a>. For more information please see <a href=\"%2$s\"  target=\"_blank\"  class=\"new-window\" title=\"Google Places API Introduction\">this article</a>.</p> <p>Once you have obtained your API key enter it in the <a href=\"%3$s\" title=\"Google Places Reviews Plugin Settings\">plugin settings page</a>.</p>"
+#: classes/widget.php:737
+msgid "<p><strong>Notice: </strong>No Google Places API key detected. You will need to create an API key to use Google Places Reviews. API keys are manage through the <a href=\"%1$s\" class=\"new-window\" target=\"_blank\">Google API Console</a>. For more information please see <a href=\"%2$s\"  target=\"_blank\"  class=\"new-window\" title=\"Google Places API Introduction\">this article</a>.</p> <p>Once you have obtained your API key enter it in the <a href=\"%3$s\" title=\"Google Places Reviews Plugin Settings\">plugin settings page</a>.</p>"
 msgstr ""
 
-#: classes/widget.php:1171
+#: classes/widget.php:1191
 msgid " out of 5 stars"
 msgstr ""
 
-#: classes/widget.php:1179, classes/widget.php:1179
+#: classes/widget.php:1199, classes/widget.php:1199
 msgid "Reviewed from Google"
+msgstr ""
+
+#: classes/widget.php:1367
+msgid "Cache cleared"
+msgstr ""
+
+#: classes/widget.php:1373
+msgid "Error: Transient ID not set. Cache not cleared."
 msgstr ""
 
 #: inc/admin.php:447
@@ -67,7 +75,7 @@ msgstr ""
 msgid "Go to Settings"
 msgstr ""
 
-#: inc/admin.php:471, inc/widget-form.php:521, inc/views/settings.php:9
+#: inc/admin.php:471, inc/widget-form.php:523, inc/views/settings.php:9
 msgid "Upgrade to Pro"
 msgstr ""
 
@@ -128,7 +136,7 @@ msgid "The Google Place ID is a textual identifier that uniquely identifies a pl
 msgstr ""
 
 #: inc/options.php:72
-msgid "Filter bad reviews to prevent them from displaying. Please note that the Google Places API only allows for up to 5 total reviews displayed per location. This option may limit the total number further."
+msgid "PRO FEATURE: Filter bad reviews to prevent them from displaying. Please note that the Google Places API only allows for up to 5 total reviews displayed per location. This option may limit the total number further."
 msgstr ""
 
 #: inc/options.php:75
@@ -195,187 +203,187 @@ msgstr ""
 msgid "Output content after the main widget content. Useful to provide a button or custom text inviting the user to perform an action or read a message."
 msgstr ""
 
-#: inc/widget-form.php:21
+#: inc/widget-form.php:23
 msgid "Widget Title"
 msgstr ""
 
-#: inc/widget-form.php:39
+#: inc/widget-form.php:41
 msgid "Location Lookup"
 msgstr ""
 
-#: inc/widget-form.php:53
+#: inc/widget-form.php:55
 msgid "Place Type"
 msgstr ""
 
-#: inc/widget-form.php:63
+#: inc/widget-form.php:65
 msgid "All"
 msgstr ""
 
-#: inc/widget-form.php:71
+#: inc/widget-form.php:73
 msgid "Addresses"
 msgstr ""
 
-#: inc/widget-form.php:79
+#: inc/widget-form.php:81
 msgid "Establishments"
 msgstr ""
 
-#: inc/widget-form.php:87
+#: inc/widget-form.php:89
 msgid "Regions"
 msgstr ""
 
-#: inc/widget-form.php:107
+#: inc/widget-form.php:109
 msgid "<strong>Place Set:</strong> You have successfully set the place for this widget. To switch the place use the Location Lookup field above."
 msgstr ""
 
-#: inc/widget-form.php:113
+#: inc/widget-form.php:115
 msgid "Location"
 msgstr ""
 
-#: inc/widget-form.php:131
+#: inc/widget-form.php:133
 msgid "Location Reference ID"
 msgstr ""
 
-#: inc/widget-form.php:141
+#: inc/widget-form.php:143
 msgid "Location Place ID"
 msgstr ""
 
-#: inc/widget-form.php:153
+#: inc/widget-form.php:155
 msgid "Review Options"
 msgstr ""
 
-#: inc/widget-form.php:167
+#: inc/widget-form.php:169
 msgid "Minimum Review Rating:"
 msgstr ""
 
-#: inc/widget-form.php:181
+#: inc/widget-form.php:183
 msgid "No filter"
 msgstr ""
 
-#: inc/widget-form.php:189
+#: inc/widget-form.php:191
 msgid "5 Stars"
 msgstr ""
 
-#: inc/widget-form.php:197
+#: inc/widget-form.php:199
 msgid "4 Stars"
 msgstr ""
 
-#: inc/widget-form.php:205
+#: inc/widget-form.php:207
 msgid "3 Stars"
 msgstr ""
 
-#: inc/widget-form.php:213
+#: inc/widget-form.php:215
 msgid "2 Stars"
 msgstr ""
 
-#: inc/widget-form.php:221
+#: inc/widget-form.php:223
 msgid "1 Star"
 msgstr ""
 
-#: inc/widget-form.php:239
+#: inc/widget-form.php:241
 msgid "Limit Number of Reviews:"
 msgstr ""
 
-#: inc/widget-form.php:277
+#: inc/widget-form.php:279
 msgid "Display Options"
 msgstr ""
 
-#: inc/widget-form.php:289
+#: inc/widget-form.php:291
 msgid "Widget Theme"
 msgstr ""
 
-#: inc/widget-form.php:297
+#: inc/widget-form.php:299
 msgid "Bare Bones"
 msgstr ""
 
-#: inc/widget-form.php:299
+#: inc/widget-form.php:301
 msgid "Minimal Light"
 msgstr ""
 
-#: inc/widget-form.php:301
+#: inc/widget-form.php:303
 msgid "Minimal Dark"
 msgstr ""
 
-#: inc/widget-form.php:303
+#: inc/widget-form.php:305
 msgid "Shadow Light"
 msgstr ""
 
-#: inc/widget-form.php:305
+#: inc/widget-form.php:307
 msgid "Shadow Dark"
 msgstr ""
 
-#: inc/widget-form.php:341
+#: inc/widget-form.php:343
 msgid "Hide Business Information"
 msgstr ""
 
-#: inc/widget-form.php:355
+#: inc/widget-form.php:357
 msgid "Hide \"x out of 5 stars\" text"
 msgstr ""
 
-#: inc/widget-form.php:371
+#: inc/widget-form.php:373
 msgid "Hide Google logo"
 msgstr ""
 
-#: inc/widget-form.php:385
+#: inc/widget-form.php:387
 msgid "Advanced Options:"
 msgstr ""
 
-#: inc/widget-form.php:399
+#: inc/widget-form.php:401
 msgid "Cache Data:"
 msgstr ""
 
-#: inc/widget-form.php:409
+#: inc/widget-form.php:411
 msgid "None"
 msgstr ""
 
-#: inc/widget-form.php:411
+#: inc/widget-form.php:413
 msgid "1 Hour"
 msgstr ""
 
-#: inc/widget-form.php:413
+#: inc/widget-form.php:415
 msgid "3 Hours"
 msgstr ""
 
-#: inc/widget-form.php:415
+#: inc/widget-form.php:417
 msgid "6 Hours"
 msgstr ""
 
-#: inc/widget-form.php:417
+#: inc/widget-form.php:419
 msgid "12 Hours"
 msgstr ""
 
-#: inc/widget-form.php:419
+#: inc/widget-form.php:421
 msgid "1 Day"
 msgstr ""
 
-#: inc/widget-form.php:421
+#: inc/widget-form.php:423
 msgid "2 Days"
 msgstr ""
 
-#: inc/widget-form.php:423
+#: inc/widget-form.php:425
 msgid "1 Week"
 msgstr ""
 
-#: inc/widget-form.php:469
+#: inc/widget-form.php:471
 msgid "Clear"
 msgstr ""
 
-#: inc/widget-form.php:469
+#: inc/widget-form.php:471
 msgid "Clear Cache"
 msgstr ""
 
-#: inc/widget-form.php:485
+#: inc/widget-form.php:487
 msgid "Disable Title Output"
 msgstr ""
 
-#: inc/widget-form.php:497
+#: inc/widget-form.php:499
 msgid "Open Links in New Window"
 msgstr ""
 
-#: inc/widget-form.php:509
+#: inc/widget-form.php:511
 msgid "No Follow Links"
 msgstr ""
 
-#: inc/widget-form.php:533
+#: inc/widget-form.php:535
 msgid "Plugin Documentation"
 msgstr ""
 

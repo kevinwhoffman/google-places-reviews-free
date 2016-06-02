@@ -96,6 +96,7 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 
 = 1.4 =
 * New: Improved widget UI when viewing under Appearances > Widget
+* Tweak: CSS tweaks for better frontend theme compatibility
 * Fix: z-index conflict with Custom Sidebars plugin by WPMUDev
 * Fix: Error returned from google when API url contained malformed characters - now we sanitize the URL before passing it to Google's API
 * Fix: Prevent conflict with other review bundle plugins' clear cache feature by prefixing ajax callback
