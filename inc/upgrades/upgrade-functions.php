@@ -3,7 +3,7 @@
  *  Handles Upgrade Functionality
  *
  * @description : This is the Reference ID that Place ID
- * @copyright   Copyright (c) 2015, WordImpress
+ * @copyright   Copyright (c) 2016, WordImpress
  * @since       : 1.3
  */
 
