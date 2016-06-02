@@ -264,6 +264,6 @@
 
 <p class="gpr-widget-footer-links clearfix">
 	<span class="google-power"></span>
-	<a href="https://wordimpress.com/docs/google-places-reviews/" target="_blank" class="new-window"><?php _e( 'Plugin Documentation', 'gpr' ); ?></a>
+	<a href="https://wordimpress.com/documentation/google-places-reviews/" target="_blank" class="new-window"><?php _e( 'Plugin Documentation', 'gpr' ); ?></a>
 </p>
 
