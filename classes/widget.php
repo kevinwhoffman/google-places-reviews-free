@@ -1,7 +1,9 @@
 <?php
 
 /**
- *  Google Places Reviews
+ * Google Places Reviews
+ *
+ * Class Google_Places_Reviews
  *
  * @description: The Google Places Reviews
  * @since      : 1.0
@@ -117,7 +119,9 @@ class Google_Places_Reviews extends WP_Widget {
 
 
 	/**
-	 * Adds Google Places Reviews Stylesheets
+	 * Frontend Scripts
+	 *
+	 * @description: Adds Google Places Reviews Stylesheets
 	 */
 	function frontend_widget_scripts() {
 
@@ -224,25 +228,25 @@ class Google_Places_Reviews extends WP_Widget {
 
 				//Assign Time to appropriate Math
 				switch ( $expiration ) {
-					case "1 Hour":
+					case '1 Hour':
 						$expiration = 3600;
 						break;
-					case "3 Hours":
+					case '3 Hours':
 						$expiration = 3600 * 3;
 						break;
-					case "6 Hours":
+					case '6 Hours':
 						$expiration = 3600 * 6;
 						break;
-					case "12 Hours":
+					case '12 Hours':
 						$expiration = 60 * 60 * 12;
 						break;
-					case "1 Day":
+					case '1 Day':
 						$expiration = 60 * 60 * 24;
 						break;
-					case "2 Days":
+					case '2 Days':
 						$expiration = 60 * 60 * 48;
 						break;
-					case "1 Week":
+					case '1 Week':
 						$expiration = 60 * 60 * 168;
 						break;
 				}
@@ -363,7 +367,7 @@ class Google_Places_Reviews extends WP_Widget {
 
 		//API Key Check:
 		if ( ! isset( $this->options['google_places_api_key'] ) || empty( $this->options['google_places_api_key'] ) ) {
-			$api_key_error = sprintf( __( '<p><strong>Notice: </strong>No Google Places API key detected. You will need to create an API key to use Google Places Reviews. API keys are manage through the <a href="%1$s" class="new-window" target="_blank" class="new-window">Google API Console</a>. For more information please see <a href="%2$s"  target="_blank"  class="new-window" title="Google Places API Introduction">this article</a>.</p> <p>Once you have obtained your API key enter it in the <a href="%3$s" title="Google Places Reviews Plugin Settings">plugin settings page</a>.</p>', 'gpr' ), esc_url( 'https://code.google.com/apis/console/?noredirect' ), esc_url( 'https://developers.google.com/places/documentation/#Authentication' ), admin_url( '/options-general.php?page=googleplacesreviews' ) );
+			$api_key_error = sprintf( __( '<p><strong>Notice: </strong>No Google Places API key detected. You will need to create an API key to use Google Places Reviews. API keys are manage through the <a href="%1$s" class="new-window" target="_blank">Google API Console</a>. For more information please see <a href="%2$s"  target="_blank"  class="new-window" title="Google Places API Introduction">this article</a>.</p> <p>Once you have obtained your API key enter it in the <a href="%3$s" title="Google Places Reviews Plugin Settings">plugin settings page</a>.</p>', 'gpr' ), esc_url( 'https://code.google.com/apis/console/?noredirect' ), esc_url( 'https://developers.google.com/places/documentation/#Authentication' ), admin_url( '/options-general.php?page=googleplacesreviews' ) );
 			$this->output_error_message( $api_key_error, 'error' );
 
 			return;
@@ -377,7 +381,7 @@ class Google_Places_Reviews extends WP_Widget {
 		include( GPR_PLUGIN_PATH . '/inc/widget-form.php' );
 
 
-	} //end form function
+	} 
 
 
 	/**
@@ -428,7 +432,13 @@ class Google_Places_Reviews extends WP_Widget {
 
 	}
 
-
+	/**
+	 * Get Reviewers Avatars
+	 *
+	 * @description: Google doesn't provide avatars within the normal places API so we have to get them from picasaweb, unfortunately
+	 *
+	 * @return array
+	 */
 	public function get_reviewers_avatars( $response ) {
 		//GPR Reviews Array
 		$gpr_reviews = array();
@@ -442,7 +452,7 @@ class Google_Places_Reviews extends WP_Widget {
 				$user_id = isset( $review['author_url'] ) ? str_replace( 'https://plus.google.com/', '', $review['author_url'] ) : '';
 
 				//Add args to
-				$request_url = add_query_arg(esc_url(
+				$request_url = add_query_arg( esc_url(
 					array(
 						'alt' => 'json',
 					),

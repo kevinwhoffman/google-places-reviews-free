@@ -69,7 +69,7 @@ function gpr_admin_tooltip( $tip_name ) {
 			$tip_text = __( 'The Google Place ID is a textual identifier that uniquely identifies a place and can be used to retrieve information about the place. This option is set using the "Location Lookup" field above.', 'gpr' );
 			break;
 		case 'review_filter':
-			$tip_text = __( 'Filter bad reviews to prevent them from displaying. Please note that the Google Places API only allows for up to 5 total reviews displayed per location. This option may limit the total number further.', 'gpr' );
+			$tip_text = __( 'PRO FEATURE: Filter bad reviews to prevent them from displaying. Please note that the Google Places API only allows for up to 5 total reviews displayed per location. This option may limit the total number further.', 'gpr' );
 			break;
 		case 'review_limit':
 			$tip_text = __( 'Limit the number of reviews displayed for this location to a set number.', 'gpr' );
