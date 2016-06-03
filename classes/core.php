@@ -81,9 +81,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 			$this->includes = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['includes'], '/' ) ) );
 			$this->views    = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['views'], '/' ) ) );
 			$this->assets   = trim( $this->args['assets'], '/' );
-			// Make plugin available for translation
-			load_plugin_textdomain( 'gpr', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
-
+			
 			//define a version constant
 			define( 'GPR_VERSION', $this->version );
 
