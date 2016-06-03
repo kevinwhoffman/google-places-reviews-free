@@ -451,15 +451,15 @@ class Google_Places_Reviews extends WP_Widget {
 
 				$user_id = isset( $review['author_url'] ) ? str_replace( 'https://plus.google.com/', '', $review['author_url'] ) : '';
 
-				//Add args to
-				$request_url = add_query_arg( esc_url(
+				//Add args to URL
+				$request_url = add_query_arg(
 					array(
 						'alt' => 'json',
 					),
 					'https://picasaweb.google.com/data/entry/api/user/' . $user_id
-				) );
+				);
 
-				$avatar_get      = wp_remote_get( $request_url );
+				$avatar_get      = wp_remote_get( esc_url( $request_url ) );
 				$avatar_get_body = json_decode( wp_remote_retrieve_body( $avatar_get ), true );
 				$avatar_img      = preg_replace( "/^http:/i", "https:", $avatar_get_body['entry']['gphoto$thumbnail']['$t'] );
 
