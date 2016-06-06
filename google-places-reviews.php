@@ -10,7 +10,6 @@
  * License: GPL2
  */
 
-
 if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 
 	/**
@@ -67,8 +66,6 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 				$plugins_url = str_ireplace( 'https://', 'http://', $plugins_url );
 			}
 
-			define( 'GPR_PLUGIN_NAME', 'gpr' );
-			define( 'GPR_PLUGIN_NAME_PLUGIN', plugin_basename( __FILE__ ) );
 			define( 'GPR_PLUGIN_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 			define( 'GPR_PLUGIN_URL', $plugins_url . '/' . basename( plugin_dir_path( __FILE__ ) ) );
 
@@ -132,7 +129,7 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 
 			//Include the widget
 			if ( ! class_exists( 'Google_Places_Reviews' ) ) {
-				require 'classes/widget.php';
+				require GPR_PLUGIN_PATH . '/classes/widget.php';
 			}
 
 			//Admin only
