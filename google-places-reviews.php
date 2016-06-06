@@ -55,6 +55,8 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'options_scripts' ) );
 
+			add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
+
 			//Register the Google Places widget
 			add_action( 'widgets_init', array( $this, 'setup_widget' ) );
 
@@ -166,6 +168,47 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 			}
 
 		}
+
+		/**
+		 * Plugin row meta links
+		 *
+		 * @since 1.4
+		 *
+		 * @param array $input already defined meta links
+		 * @param string $file plugin file path and name being processed
+		 *
+		 * @return array $input
+		 */
+		function plugin_row_meta( $input, $file ) {
+
+			if ( $file != plugin_basename( __FILE__ ) ) {
+				return $input;
+			}
+
+			$addons_link = esc_url( add_query_arg( array(
+					'utm_source'   => 'plugins-page',
+					'utm_medium'   => 'plugin-row',
+					'utm_campaign' => 'admin',
+				), 'https://givewp.com/addons/' )
+			);
+
+			$docs_link = esc_url( add_query_arg( array(
+					'utm_source'   => 'plugins-page',
+					'utm_medium'   => 'plugin-row',
+					'utm_campaign' => 'admin',
+				), 'https://wordimpress.com/plugins/google-places-reviews-pro/' )
+			);
+
+			$links = array(
+				'<a href="' . $docs_link . '" target="_blank">' . esc_html__( 'View Documentation', 'give' ) . '</a>',
+				'<a href="' . $addons_link . '" target="_blank">' . esc_html__( 'Upgrade to Pro', 'give' ) . ' &raquo;</a>',
+			);
+
+			$input = array_merge( $input, $links );
+
+			return $input;
+		}
+
 
 	}//end WP_Google_Places_Reviews_Free class
 
