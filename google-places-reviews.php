@@ -135,7 +135,7 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 			//Admin only
 			if ( is_admin() ) {
 				//Deactivating normal activation banner for upgrade to Place ID banner
-				require_once GPR_PLUGIN_PATH . '/inc/admin.php';
+				require_once GPR_PLUGIN_PATH . '/inc/activation-banner.php';
 
 				//Display our upgrade notice
 				require_once GPR_PLUGIN_PATH . '/inc/upgrades/upgrade-functions.php';

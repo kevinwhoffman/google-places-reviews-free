@@ -4,7 +4,7 @@ $google_places_reviews_options = array(
 	array( 'type' => 'about' ),
 	array(
 		'name'  => __( 'Google Places API Key', 'google-places-reviews' ),
-		'desc'  => sprintf( __( 'API keys are manage through the <a href="%1$s" class="new-window" target="_blank">Google API Console</a>. For more information please <a href="%2$s" class="new-window" target="_blank">review these steps</a>.', 'google-places-reviews' ), esc_url( 'https://code.google.com/apis/console/?noredirect' ), esc_url( 'https://developers.google.com/places/documentation/#Authentication' ) ),
+		'desc'  => sprintf( __( 'API keys are manage through the <a href="%1$s" class="new-window" target="_blank">Google API Console</a>. For more information please <a href="%2$s" class="new-window" target="_blank">review these steps</a>.', 'google-places-reviews' ), esc_url( 'https://code.google.com/apis/console/?noredirect' ), esc_url( 'https://developers.google.com/places/web-service/get-api-key' ) ),
 		'std'   => '',
 		'id'    => 'google_places_api_key',
 		'type'  => 'text',

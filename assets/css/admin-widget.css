@@ -225,6 +225,7 @@ Alerts
 .gpr-widget-footer-links {
     font-style: italic;
     font-size: 11px;
+    text-align: center;
 }
 
 .gpr-widget-footer-links a {
@@ -234,11 +235,9 @@ Alerts
 
 .google-power {
     display: block;
-    background: url('../images/powered-by-google-on-white.png') no-repeat 0 0 transparent;
-    width: 104px;
-    height: 16px;
-    margin-bottom: 4px;
-    float: right;
+    background: url('../images/powered-by-google-on-white.png') no-repeat center transparent;
+    height: 20px;
+    margin-bottom: 5px;
 }
 
 .gpr-widget-alert {

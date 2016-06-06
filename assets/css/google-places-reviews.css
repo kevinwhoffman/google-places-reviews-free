@@ -19,7 +19,7 @@ Global Header
 }
 
 [id*='gpr_widget'] .gpr-business-header .star-rating-wrap {
-    margin: 0 6px 4px 0;
+    margin: 3px 6px 6px 0;
 }
 
 [id*='gpr_widget'] .gpr-business-header p.gpr-rating-value {

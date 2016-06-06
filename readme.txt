@@ -102,6 +102,7 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 
 = 1.4 =
 * New: Improved widget UI when viewing under Appearances > Widget
+* New: Updated Google logo through out plugin
 * Tweak: CSS tweaks for better frontend theme compatibility
 * Tweak: Gulp now used to compile POT file for translation usage
 * Tweak: Text domain changed back to 'google-places-reviews' do that the plugin can be included for translation by WordPress.org polyglots
