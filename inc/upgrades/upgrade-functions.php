@@ -64,7 +64,7 @@ add_action( 'admin_notices', 'gpr_show_upgrade_notices' );
  */
 function gpr_add_upgrade_submenu_page() {
 
-	$gpr_upgrades_screen = add_submenu_page( null, __( 'Google Places Reviews Upgrades', 'edd' ), __( 'Google Places Reviews Upgrades', 'edd' ), 'activate_plugins', 'gpr-upgrades', 'gpr_upgrades_screen' );
+	$gpr_upgrades_screen = add_submenu_page( null, __( 'Google Places Reviews Upgrades', 'google-places-reviews' ), __( 'Google Places Reviews Upgrades', 'google-places-reviews' ), 'activate_plugins', 'gpr-upgrades', 'gpr_upgrades_screen' );
 
 }
 
