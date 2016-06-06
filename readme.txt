@@ -60,11 +60,17 @@ Why limit your reviews to just Google Places Reviews? Check out our other free b
 
 == Installation ==
 
+**Automatic Install:**
+
+1. Log into your WP-Admin
+2. Navigate to 'Plugins' > 'Add New'
+3. Search for "Google Places Reviews" and install it from there.
+
+**Manual Install:**
+
 1. Upload the `google-places-reviews` folder and it's contents to the `/wp-content/plugins/` directory or install via the WP plugins panel in your WordPress admin dashboard
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. That's it! You should now be able to use the widget.
-
-Note: If you have WordPress 2.7 or above (and I hope you are) you can simply go to 'Plugins' > 'Add New' in the WordPress admin and search for "Google Places Reviews" and install it from there.
 
 == Frequently Asked Questions ==
 
@@ -97,8 +103,9 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 = 1.4 =
 * New: Improved widget UI when viewing under Appearances > Widget
 * Tweak: CSS tweaks for better frontend theme compatibility
+* Tweak: Gulp now used to compile POT file for translation usage
 * Fix: z-index conflict with Custom Sidebars plugin by WPMUDev
-* Fix: Error returned from google when API url contained malformed characters - now we sanitize the URL before passing it to Google's API
+* Fix: Error returned from google when API url contained malformed characters - now we sanitize the URL before passing it to Google's API; this will help businesses with unconventional characters in their name connect to Google's API
 * Fix: Prevent conflict with other review bundle plugins' clear cache feature by prefixing ajax callback
 
 = 1.3 =
