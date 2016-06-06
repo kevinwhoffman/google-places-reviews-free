@@ -92,7 +92,6 @@ function gpr_activation_admin_notice() {
 					right: 0;
 					width: 6rem;
 					background: rgba(255, 255, 255, .15);
-					color: white;
 					text-align: center;
 				}
 
