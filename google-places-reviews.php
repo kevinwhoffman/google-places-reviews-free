@@ -196,7 +196,7 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 					'utm_source'   => 'plugins-page',
 					'utm_medium'   => 'plugin-row',
 					'utm_campaign' => 'admin',
-				), 'https://wordimpress.com/plugins/google-places-reviews-pro/' )
+				), 'https://wordimpress.com/documentation/google-places-reviews/' )
 			);
 
 			$links = array(
