@@ -14,7 +14,7 @@ if ( ! isset( $response['result']['url'] ) || empty( $response['result']['url'] 
 	//use website link if for some reason G+ page not in response
 	$website = isset( $response['result']['website'] ) ? $response['result']['website'] : '';
 }
-$name = isset( $response['result']['name'] ) ? $response['result']['name'] : __( 'Sorry, this business does not have a proper Place ID set.', 'gpr' );
+$name = isset( $response['result']['name'] ) ? $response['result']['name'] : __( 'Sorry, this business does not have a proper Place ID set.', 'google-places-reviews' );
 
 $ratings_count = isset( $response['result']['user_ratings_total'] ) ? intval( $response['result']['user_ratings_total'] ) : 0;
 
@@ -47,7 +47,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 
 						<span class="no-reviews-header"><?php
 							$googleplus_page = isset( $response['result']['url'] ) ? $response['result']['url'] : '';
-							echo sprintf( __( '<a href="%1$s" class="leave-review" target="_blank" class="new-window">Write a review</a>', 'gpr' ), esc_url( $googleplus_page ) ); ?></span>
+							echo sprintf( __( '<a href="%1$s" class="leave-review" target="_blank" class="new-window">Write a review</a>', 'google-places-reviews' ), esc_url( $googleplus_page ) ); ?></span>
 
 					<?php } ?>
 
@@ -95,7 +95,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 									<span class="grp-reviewer-name">
 										<?php if ( ! empty( $author_url ) ) { ?>
 											<a href="<?php echo $author_url; ?>"
-											   title="<?php _e( 'View this profile.', 'gpr' ); ?>" <?php echo $target_blank . $no_follow; ?>><span><?php echo $author_name; ?></span></a>
+											   title="<?php _e( 'View this profile.', 'google-places-reviews' ); ?>" <?php echo $target_blank . $no_follow; ?>><span><?php echo $author_name; ?></span></a>
 										<?php } else { ?>
 											<?php echo $author_name; ?>
 										<?php } ?>
@@ -121,7 +121,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 
 					?>
 					<div class="gpr-read-all-reviews">
-						<a href="<?php echo esc_url( $googleplus_page ) ?>" <?php echo $target_blank . $no_follow; ?>><?php printf( esc_html__( 'Read All %d Reviews', 'gpr' ), $ratings_count ); ?></a>
+						<a href="<?php echo esc_url( $googleplus_page ) ?>" <?php echo $target_blank . $no_follow; ?>><?php printf( esc_html__( 'Read All %d Reviews', 'google-places-reviews' ), $ratings_count ); ?></a>
 					</div>
 				<?php } // endif read all reviews button ?>
 
@@ -136,7 +136,7 @@ $place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] :
 			<div class="gpr-no-reviews-wrap">
 				<p class="no-reviews"><?php
 					$googleplus_page = isset( $response['result']['url'] ) ? $response['result']['url'] : '';
-					echo sprintf( __( 'There are no reviews yet for this business. <a href="%1$s" class="leave-review" target="_blank">Be the first to review</a>', 'gpr' ), esc_url( $googleplus_page ) ); ?></p>
+					echo sprintf( __( 'There are no reviews yet for this business. <a href="%1$s" class="leave-review" target="_blank">Be the first to review</a>', 'google-places-reviews' ), esc_url( $googleplus_page ) ); ?></p>
 
 			</div>
 

@@ -11,7 +11,7 @@ gulp.task('pot', function () {
     return gulp.src('**/*.php')
         .pipe(wpPot({
             package: 'Google Places Reviews Pro',
-            domain: 'gpr',
+            domain: 'google-places-reviews',
             destFile: 'gpr.pot',
             lastTranslator: '',
             team: 'WordImpress <info@wordimpress.com>'

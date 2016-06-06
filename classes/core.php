@@ -336,7 +336,7 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 		 * Add settings link to plugins dashboard
 		 */
 		function add_settings_link( $links ) {
-			$links[] = '<a href="' . $this->admin_url . '">' . __( 'Settings', 'gpr' ) . '</a>';
+			$links[] = '<a href="' . $this->admin_url . '">' . __( 'Settings', 'google-places-reviews' ) . '</a>';
 
 			return $links;
 		}

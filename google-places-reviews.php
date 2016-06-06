@@ -30,9 +30,9 @@ function init_google_places_reviews_widget() {
 	$google_places_reviews->add_options_page( array(), $google_places_reviews_options );
 
 	// Make plugin meta translatable
-	__( 'Google Places Reviews', 'gpr' );
-	__( 'Devin Walker', 'gpr' );
-	__( 'gpr', 'gpr' );
+	__( 'Google Places Reviews', 'google-places-reviews' );
+	__( 'Devin Walker', 'google-places-reviews' );
+	__( 'google-places-reviews', 'google-places-reviews' );
 
 	//Include the widget
 	if ( ! class_exists( 'Google_Places_Reviews' ) ) {
@@ -55,7 +55,7 @@ function init_google_places_reviews_widget() {
 }
 
 /*
- * @DESC: Register Open Table widget
+ * @DESC: Register  widget
  */
 add_action( 'widgets_init', 'init_google_places_reviews_widget' );
 add_action( 'widgets_init', create_function( '', 'register_widget( "Google_Places_Reviews" );' ) );

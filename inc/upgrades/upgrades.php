@@ -43,16 +43,16 @@ function gpr_upgrades_screen() {
 	}
 	?>
 	<div class="wrap">
-		<h2><?php _e( 'Google Places Review - Upgrade', 'gpr' ); ?></h2>
+		<h2><?php _e( 'Google Places Review - Upgrade', 'google-places-reviews' ); ?></h2>
 
 		<?php if ( ! empty( $action ) ) : ?>
 
 			<div id="gpr-upgrade-status">
-				<p><?php _e( 'The upgrade process has started, please be patient. This could take several minutes. You will be automatically redirected when the upgrade is finished.', 'gpr' ); ?></p>
+				<p><?php _e( 'The upgrade process has started, please be patient. This could take several minutes. You will be automatically redirected when the upgrade is finished.', 'google-places-reviews' ); ?></p>
 
 				<?php if ( ! empty( $total ) ) : ?>
 					<p>
-						<strong><?php printf( __( 'Step %d of approximately %d running', 'gpr' ), $step, $steps ); ?></strong>
+						<strong><?php printf( __( 'Step %d of approximately %d running', 'google-places-reviews' ), $step, $steps ); ?></strong>
 					</p>
 				<?php endif; ?>
 			</div>
@@ -66,7 +66,7 @@ function gpr_upgrades_screen() {
 
 			<div id="gpr-upgrade-status" class="updated">
 				<p>
-					<?php _e( 'The upgrade process has started, please be patient. This could take several minutes. You will be automatically redirected when the upgrade is finished.', 'gpr' ); ?>
+					<?php _e( 'The upgrade process has started, please be patient. This could take several minutes. You will be automatically redirected when the upgrade is finished.', 'google-places-reviews' ); ?>
 					<img src="<?php echo GPR_PLUGIN_URL . '/assets/images/loading.gif'; ?>" id="gpr-upgrade-loader" />
 				</p>
 			</div>

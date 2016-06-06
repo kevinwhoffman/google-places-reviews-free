@@ -24,10 +24,10 @@ msgid "Devin Walker"
 msgstr ""
 
 #: google-places-reviews.php:69
-msgid "gpr"
+msgid "google-places-reviews"
 msgstr ""
 
-#: classes/core.php:681
+#: classes/core.php:677
 msgid "Settings"
 msgstr ""
 

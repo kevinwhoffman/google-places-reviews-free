@@ -62,7 +62,7 @@ class Google_Places_Reviews extends WP_Widget {
 			'Google Places Reviews', // Name
 			array(
 				'classname'   => 'google-places-reviews',
-				'description' => __( 'Display user reviews for any location found on Google Places.', 'gpr' )
+				'description' => __( 'Display user reviews for any location found on Google Places.', 'google-places-reviews' )
 			)
 		);
 
@@ -160,7 +160,7 @@ class Google_Places_Reviews extends WP_Widget {
 
 		//Check for a reference. If none, output error
 		if ( $reference === 'No location set' && empty( $place_id ) || empty( $reference ) && $place_id === 'No location set' ) {
-			$this->output_error_message( __( 'There is no location set for this widget yet.', 'gpr' ), 'error' );
+			$this->output_error_message( __( 'There is no location set for this widget yet.', 'google-places-reviews' ), 'error' );
 
 			return false;
 		}
@@ -276,7 +276,7 @@ class Google_Places_Reviews extends WP_Widget {
 		} //No Place ID or Reference set for this widget
 		elseif ( empty( $reference ) && empty( $place_id ) ) {
 
-			$this->output_error_message( __( '<strong>INVALID REQUEST</strong>: Please check that this widget has a Google Place ID set.', 'gpr' ), 'error' );
+			$this->output_error_message( __( '<strong>INVALID REQUEST</strong>: Please check that this widget has a Google Place ID set.', 'google-places-reviews' ), 'error' );
 			$this->delete_transient_cache( $transient_unique_id );
 
 			return false;
@@ -366,7 +366,7 @@ class Google_Places_Reviews extends WP_Widget {
 
 		//API Key Check:
 		if ( ! isset( $this->options['google_places_api_key'] ) || empty( $this->options['google_places_api_key'] ) ) {
-			$api_key_error = sprintf( __( '<p><strong>Notice: </strong>No Google Places API key detected. You will need to create an API key to use Google Places Reviews. API keys are manage through the <a href="%1$s" class="new-window" target="_blank">Google API Console</a>. For more information please see <a href="%2$s"  target="_blank"  class="new-window" title="Google Places API Introduction">this article</a>.</p> <p>Once you have obtained your API key enter it in the <a href="%3$s" title="Google Places Reviews Plugin Settings">plugin settings page</a>.</p>', 'gpr' ), esc_url( 'https://code.google.com/apis/console/?noredirect' ), esc_url( 'https://developers.google.com/places/documentation/#Authentication' ), admin_url( '/options-general.php?page=googleplacesreviews' ) );
+			$api_key_error = sprintf( __( '<p><strong>Notice: </strong>No Google Places API key detected. You will need to create an API key to use Google Places Reviews. API keys are manage through the <a href="%1$s" class="new-window" target="_blank">Google API Console</a>. For more information please see <a href="%2$s"  target="_blank"  class="new-window" title="Google Places API Introduction">this article</a>.</p> <p>Once you have obtained your API key enter it in the <a href="%3$s" title="Google Places Reviews Plugin Settings">plugin settings page</a>.</p>', 'google-places-reviews' ), esc_url( 'https://code.google.com/apis/console/?noredirect' ), esc_url( 'https://developers.google.com/places/documentation/#Authentication' ), admin_url( '/options-general.php?page=googleplacesreviews' ) );
 			$this->output_error_message( $api_key_error, 'error' );
 
 			return;
@@ -593,11 +593,11 @@ class Google_Places_Reviews extends WP_Widget {
 	function get_star_rating( $rating, $unix_timestamp, $hide_out_of_rating, $hide_google_image ) {
 
 		$output        = '';
-		$rating_value  = '<p class="gpr-rating-value" ' . ( ( $hide_out_of_rating === '1' ) ? ' style="display:none;"' : '' ) . '><span>' . $rating . '</span>' . __( ' out of 5 stars', 'gpr' ) . '</p>';
+		$rating_value  = '<p class="gpr-rating-value" ' . ( ( $hide_out_of_rating === '1' ) ? ' style="display:none;"' : '' ) . '><span>' . $rating . '</span>' . __( ' out of 5 stars', 'google-places-reviews' ) . '</p>';
 		$is_gpr_header = true;
 
 		//AVATAR
-		$google_img = '<div class="gpr-google-logo-wrap"' . ( ( $hide_google_image === '1' ) ? ' style="display:none;"' : '' ) . '><img src="' . GPR_PLUGIN_URL . '/assets/images/google-small-logo.png' . '" class="gpr-google-logo-header" title=" ' . __( 'Reviewed from Google', 'gpr' ) . '" alt="' . __( 'Reviewed from Google', 'gpr' ) . '" /></div>';
+		$google_img = '<div class="gpr-google-logo-wrap"' . ( ( $hide_google_image === '1' ) ? ' style="display:none;"' : '' ) . '><img src="' . GPR_PLUGIN_URL . '/assets/images/google-small-logo.png' . '" class="gpr-google-logo-header" title=" ' . __( 'Reviewed from Google', 'google-places-reviews' ) . '" alt="' . __( 'Reviewed from Google', 'google-places-reviews' ) . '" /></div>';
 
 
 		//Header doesn't have a timestamp
@@ -681,10 +681,10 @@ class Google_Places_Reviews extends WP_Widget {
 
 			delete_transient( $_POST['transient_id_1'] );
 			delete_transient( $_POST['transient_id_2'] );
-			echo __( 'Cache cleared', 'gpr' );
+			echo __( 'Cache cleared', 'google-places-reviews' );
 
 		} else {
-			echo __( 'Error: Transient ID not set. Cache not cleared.', 'gpr' );
+			echo __( 'Error: Transient ID not set. Cache not cleared.', 'google-places-reviews' );
 		}
 
 		wp_die();

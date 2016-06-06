@@ -221,19 +221,19 @@ function gpr_activation_admin_notice() {
             <div class="updated gpr">
                 <header>
                     <img src="<?php echo GPR_PLUGIN_URL; ?>/assets/images/google-places-reviews-plugin-page-banner.jpg"  class="gpr-logo"/>
-                    <h3><?php _e('Thanks for installing Google Places Reviews (Free Version)!','gpr'); ?></h3>
-                    <?php printf(__('<a href="%1$s" class="dismiss"></a>', 'gpr'), '?gpr_nag_ignore=0'); ?>
+                    <h3><?php _e('Thanks for installing Google Places Reviews (Free Version)!','google-places-reviews'); ?></h3>
+                    <?php printf(__('<a href="%1$s" class="dismiss"></a>', 'google-places-reviews'), '?gpr_nag_ignore=0'); ?>
                 </header>
                 <div class="gpr-actions">
                     <div class="gpr-action">
                         <a href="<?php echo admin_url(); ?>options-general.php?page=googleplacesreviews">
-                            <span class="dashicons dashicons-admin-settings"></span><?php _e('Go to Settings','gpr'); ?>
+                            <span class="dashicons dashicons-admin-settings"></span><?php _e('Go to Settings','google-places-reviews'); ?>
                         </a>
                     </div>
 
                     <div class="gpr-action">
                         <a href="https://wordimpress.com/plugins/google-places-reviews-pro/" target="_blank">
-                            <span class="dashicons dashicons-download"></span><?php _e('Upgrade to Pro','gpr'); ?>
+                            <span class="dashicons dashicons-download"></span><?php _e('Upgrade to Pro','google-places-reviews'); ?>
                         </a>
                     </div>
 
@@ -242,7 +242,7 @@ function gpr_activation_admin_notice() {
                             <span class="dashicons dashicons-edit"></span>
                             <form action="//wordimpress.us3.list-manage.com/subscribe/post?u=3ccb75d68bda4381e2f45794c&amp;id=cf1af2563c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                                 <div class="mc-field-group">
-                                    <p><small><?php _e('Get notified of plugin updates:','gpr'); ?></small></p>
+                                    <p><small><?php _e('Get notified of plugin updates:','google-places-reviews'); ?></small></p>
                                     <input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="my.email@wordpress.com">
                                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-button">
                                     <input type="hidden" value="8" name="group[13857]" id="mce-group[13857]-13857-3" checked="checked">
