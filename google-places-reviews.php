@@ -6,7 +6,7 @@
  * Version: 1.4
  * Author: WordImpress
  * Author URI: https://wordimpress.com/
- * Text Domain: gpr
+ * Text Domain: google-places-reviews
  * License: GPL2
  */
 
