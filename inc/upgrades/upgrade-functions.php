@@ -39,7 +39,7 @@ function gpr_show_upgrade_notices() {
 
 	if ( version_compare( $gpr_widget_version, '1.3', '<=' ) && ! get_option( 'gpr_refid_upgraded' ) && is_active_widget( false, false, 'gpr_widget', true ) ) {
 		printf(
-			'<div class="updated"><p><strong>Google Places Reviews Notice:</strong> ' . esc_html__( 'Hey there! We noticed you have active Google Places Reviews widget(s). Google has updated their API to use the new Google Places ID rather than previous Reference ID, which will soon be deprecated and eventually go offline. We are being proactive and would like to update your widgets to use the new Places ID for you. Once you upgrade, your widgets should work just fine. If you choose not to upgrade Google will eventually take the old reference ID offline (no date has been given). Please contact %1sWordImpress support%2s if you have any further questions or issues. %3sClick here to upgrade your widgets to use the new Places ID%4s.', 'gpr' ) . '</p></div>',
+			'<div class="updated"><p><strong>Google Places Reviews Notice:</strong> ' . esc_html__( 'Hey there! We noticed you have active Google Places Reviews widget(s). Google has updated their API to use the new Google Places ID rather than previous Reference ID, which will soon be deprecated and eventually go offline. We are being proactive and would like to update your widgets to use the new Places ID for you. Once you upgrade, your widgets should work just fine. If you choose not to upgrade Google will eventually take the old reference ID offline (no date has been given). Please contact %1sWordImpress support%2s if you have any further questions or issues. %3sClick here to upgrade your widgets to use the new Places ID%4s.', 'google-places-reviews' ) . '</p></div>',
 			'<a href="http://wordpress.org/support/plugin/google-places-reviews" target="_blank">',
 			'</a>',
 			'<br><br><strong><a href="' . esc_url( admin_url( 'options.php?page=gpr-upgrades' ) ) . '">',
@@ -80,7 +80,7 @@ add_action( 'admin_menu', 'gpr_add_upgrade_submenu_page', 10 );
 function gpr_trigger_upgrades() {
 
 	if ( ! current_user_can( 'activate_plugins' ) ) {
-		wp_die( __( 'You do not have permission to do plugin upgrades', 'gpr' ), __( 'Error', 'gpr' ), array( 'response' => 403 ) );
+		wp_die( __( 'You do not have permission to do plugin upgrades', 'google-places-reviews' ), __( 'Error', 'google-places-reviews' ), array( 'response' => 403 ) );
 	}
 
 	$gpr_widget_version = get_option( 'gpr_widget_version' );

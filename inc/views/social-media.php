@@ -1,6 +1,6 @@
 <div class="adminFacebook">
 	<p>
-		<strong><?php _e( 'Like this plugin?  Give it a like on Facebook:', 'gpr' ); ?></strong>
+		<strong><?php _e( 'Like this plugin?  Give it a like on Facebook:', 'google-places-reviews' ); ?></strong>
 	</p>
 
 	<div class="social-items-wrap">

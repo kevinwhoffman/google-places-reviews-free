@@ -104,6 +104,7 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 * New: Improved widget UI when viewing under Appearances > Widget
 * Tweak: CSS tweaks for better frontend theme compatibility
 * Tweak: Gulp now used to compile POT file for translation usage
+* Tweak: Text domain changed back to 'google-places-reviews' do that the plugin can be included for translation by WordPress.org polyglots
 * Fix: z-index conflict with Custom Sidebars plugin by WPMUDev
 * Fix: Error returned from google when API url contained malformed characters - now we sanitize the URL before passing it to Google's API; this will help businesses with unconventional characters in their name connect to Google's API
 * Fix: Prevent conflict with other review bundle plugins' clear cache feature by prefixing ajax callback
