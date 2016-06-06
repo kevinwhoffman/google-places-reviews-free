@@ -15,15 +15,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 
-#: google-places-reviews.php:259
+#: google-places-reviews.php:255
 msgid "Google Places Reviews"
 msgstr ""
 
-#: google-places-reviews.php:261
+#: google-places-reviews.php:257
 msgid "Devin Walker"
 msgstr ""
 
-#: google-places-reviews.php:263
+#: google-places-reviews.php:259
 msgid "google-places-reviews"
 msgstr ""
 
@@ -63,23 +63,23 @@ msgstr ""
 msgid "Error: Transient ID not set. Cache not cleared."
 msgstr ""
 
-#: inc/admin.php:447
-msgid "Thanks for installing Google Places Reviews (Free Version)!"
+#: inc/activation-banner.php:501
+msgid "Thank you for installing the free version of Google Places Reviews"
 msgstr ""
 
-#: inc/admin.php:449
+#: inc/activation-banner.php:503
 msgid "<a href=\"%1$s\" class=\"dismiss\"></a>"
 msgstr ""
 
-#: inc/admin.php:459
+#: inc/activation-banner.php:513
 msgid "Go to Settings"
 msgstr ""
 
-#: inc/admin.php:471, inc/widget-form.php:523, inc/views/settings.php:9
+#: inc/activation-banner.php:525, inc/widget-form.php:523, inc/views/settings.php:5
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: inc/admin.php:489
+#: inc/activation-banner.php:545
 msgid "Get notified of plugin updates:"
 msgstr ""
 
@@ -411,6 +411,10 @@ msgstr ""
 msgid "Hey there! We noticed you have active Google Places Reviews widget(s). Google has updated their API to use the new Google Places ID rather than previous Reference ID, which will soon be deprecated and eventually go offline. We are being proactive and would like to update your widgets to use the new Places ID for you. Once you upgrade, your widgets should work just fine. If you choose not to upgrade Google will eventually take the old reference ID offline (no date has been given). Please contact %1sWordImpress support%2s if you have any further questions or issues. %3sClick here to upgrade your widgets to use the new Places ID%4s."
 msgstr ""
 
+#: inc/upgrades/upgrade-functions.php:133, inc/upgrades/upgrade-functions.php:133
+msgid "Google Places Reviews Upgrades"
+msgstr ""
+
 #: inc/upgrades/upgrade-functions.php:165
 msgid "You do not have permission to do plugin upgrades"
 msgstr ""
@@ -483,23 +487,23 @@ msgstr ""
 msgid "The following options set plugin defaults and options on a global level."
 msgstr ""
 
-#: inc/views/settings.php:37
+#: inc/views/settings.php:33
 msgid "For full functionality of this page it is recommended to enable javascript."
 msgstr ""
 
-#: inc/views/settings.php:39
+#: inc/views/settings.php:35
 msgid "Settings Reset Successfully"
 msgstr ""
 
-#: inc/views/settings.php:41
+#: inc/views/settings.php:37
 msgid "Plugins already set to default settings"
 msgstr ""
 
-#: inc/views/settings.php:43
+#: inc/views/settings.php:39
 msgid "Settings saved successfully"
 msgstr ""
 
-#: inc/views/settings.php:45
+#: inc/views/settings.php:41
 msgid "Settings not saved due to no changes being made."
 msgstr ""
 
