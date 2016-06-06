@@ -84,11 +84,11 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 		function load_plugin_textdomain() {
 
 			// Set filter for plugins's languages directory
-			$gpr_lang_dir = dirname( plugin_basename( GIVE_PLUGIN_FILE ) ) . '/languages/';
+			$gpr_lang_dir = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
 			$gpr_lang_dir = apply_filters( 'gpr_languages_directory', $gpr_lang_dir );
 
 			// Traditional WordPress plugin locale filter
-			$locale = apply_filters( 'plugin_locale', get_locale(), 'give' );
+			$locale = apply_filters( 'plugin_locale', get_locale(), 'google-places-reviews' );
 			$mofile = sprintf( '%1$s-%2$s.mo', 'give', $locale );
 
 			// Setup paths to current locale file
@@ -112,7 +112,6 @@ if ( ! class_exists( 'WP_Google_Places_Reviews_Free' ) ) {
 		 * Plugin Setup
 		 */
 		public function setup_widget() {
-
 
 			// Include Core Framework class
 			require_once GPR_PLUGIN_PATH . '/classes/core.php';
