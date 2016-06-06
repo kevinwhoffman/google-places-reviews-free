@@ -67,21 +67,19 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			}
 
-
 			// Read plugin meta
 			$this->meta = get_plugin_data( $this->file, false );
 			// Init plugin data
 			$this->basename = plugin_basename( $this->file );
 			$this->slug     = sanitize_key( $this->meta['Name'] );
 			$this->version  = sanitize_text_field( $this->meta['Version'] );
-//			$this->textdomain = sanitize_html_class( $this->meta['TextDomain'] );
 			$this->name     = $this->meta['Name'];
 			$this->url      = plugins_url( '', $this->file );
 			$this->option   = $this->slug . '_options';
 			$this->includes = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['includes'], '/' ) ) );
 			$this->views    = trailingslashit( path_join( plugin_dir_path( $this->file ), trim( $this->args['views'], '/' ) ) );
 			$this->assets   = trim( $this->args['assets'], '/' );
-			
+
 			//define a version constant
 			define( 'GPR_VERSION', $this->version );
 
@@ -90,14 +88,16 @@ if ( ! class_exists( 'GPR_Plugin_Framework' ) ) {
 		/**
 		 * Debug
 		 *
-		 * Desc: Helper function
+		 * description: Helper function
 		 */
 		function debug() {
 			die( '<pre>' . print_r( $this, true ) . '</pre>' );
 		}
 
 		/**
-		 * Conditional tag to check there is settings page
+		 * Is Settings
+		 *
+		 * @description: Conditional tag to check there is settings page
 		 */
 		function is_settings() {
 			global $pagenow;
