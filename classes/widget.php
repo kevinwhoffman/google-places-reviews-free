@@ -505,7 +505,11 @@ class Google_Places_Reviews extends WP_Widget {
 				'https://maps.googleapis.com/maps/api/place/photo'
 			);
 
-			$response = array_merge( $response, array( 'place_avatar' => esc_url( $request_url ) ) );
+			// Store the response as a CSS Data URI.  This avoids an API request
+			// being made every time in the image is requested.
+			$avatar = wp_remote_get( $request_url );
+			$dataUri = sprintf( 'url(data:%s;base64,%s)', $avatar['headers']['content-type'], base64_encode( $avatar['body'] ) );
+			$response = array_merge( $response, array( 'place_avatar' => $dataUri ) );
 
 		}
 
