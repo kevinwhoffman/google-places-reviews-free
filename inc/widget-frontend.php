@@ -18,7 +18,7 @@ $name = isset( $response['result']['name'] ) ? $response['result']['name'] : __(
 
 $ratings_count = isset( $response['result']['user_ratings_total'] ) ? intval( $response['result']['user_ratings_total'] ) : 0;
 
-$place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] : "url('" . GPR_PLUGIN_URL . '/dist/images/default-img.png' . "')";
+$place_avatar = isset( $response['place_avatar'] ) ? $response['place_avatar'] : "url('" . GPR_PLUGIN_URL . '/assets/images/default-img.png' . "')";
 ?>
 
 	<div class="gpr-<?php echo sanitize_title( $widget_style ); ?> gpr-widget-inner">
