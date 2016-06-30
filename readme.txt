@@ -1,10 +1,10 @@
 === Google Places Reviews ===
-Contributors: wordimpress, dlocc, webdevmattcrom
+Contributors: wordimpress, dlocc, webdevmattcrom, shawnhooper
 Donate link: http://wordimpress.com/
 Tags: google, reviews, google reviews, google places, google places reviews, google review widget, google business reviews, google review, review, google place review
 Requires at least: 4.0
 Tested up to: 4.5.2
-Stable tag: 1.4
+Stable tag: 1.4.1
 License: GPL2
 
 Display Google Places Reviews on your WordPress website and help boost consumer confidence and search engine optimization.
@@ -99,6 +99,11 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 5. The plugins settings page found under Settings > Google Reviews
 
 == Changelog ==
+
+= 1.4.1 =
+* Solidify Cache expiration setting for stability
+* Store Place Avatar as Data URI to avoid additional API calls
+* Wrap default image in url() correctly
 
 = 1.4 =
 * New: Improved widget UI when viewing under Appearances > Widget
