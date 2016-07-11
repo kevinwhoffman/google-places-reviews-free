@@ -103,7 +103,7 @@ class Google_Places_Reviews extends WP_Widget {
 			wp_localize_script( 'gpr_widget_admin_scripts', 'gpr_ajax_object', array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'i18n'     => array(
-					'google_auth_error' => sprintf( __( '%1$sGoogle API Error:%2$s Due to recent changes by Google you must now add the Maps API to your existing API key in order to use the Location Lookup feature of the Google Places Widget. %3$sView documentation here%4$s', 'google-maps-pro' ), '<strong>', '</strong>', '<br><a href="https://wordimpress.com/documentation/maps-builder-pro/creating-maps-api-key/" target="_blank" class="new-window">', '</a>' ) )
+					'google_auth_error' => sprintf( __( '%1$sGoogle API Error:%2$s Due to recent changes by Google you must now add the Maps API to your existing API key in order to use the Location Lookup feature of the Google Places Widget. %3$sView documentation here%4$s', 'google-maps-pro' ), '<strong>', '</strong>', '<br><a href="https://wordimpress.com/documentation/google-places-reviews/creating-your-google-places-api-key/" target="_blank" class="new-window">', '</a>' ) )
 			) );
 
 			wp_register_style( 'gpr_widget_admin_tipsy', plugins_url( 'assets/css/gpr-tipsy' . $suffix . '.css', dirname( __FILE__ ) ) );
