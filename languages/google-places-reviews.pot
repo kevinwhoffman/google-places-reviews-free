@@ -35,31 +35,31 @@ msgstr ""
 msgid "Display user reviews for any location found on Google Places."
 msgstr ""
 
-#: classes/widget.php:325
+#: classes/widget.php:329
 msgid "There is no location set for this widget yet."
 msgstr ""
 
-#: classes/widget.php:557
+#: classes/widget.php:561
 msgid "<strong>INVALID REQUEST</strong>: Please check that this widget has a Google Place ID set."
 msgstr ""
 
-#: classes/widget.php:737
+#: classes/widget.php:741
 msgid "<p><strong>Notice: </strong>No Google Places API key detected. You will need to create an API key to use Google Places Reviews. API keys are manage through the <a href=\"%1$s\" class=\"new-window\" target=\"_blank\">Google API Console</a>. For more information please see <a href=\"%2$s\"  target=\"_blank\"  class=\"new-window\" title=\"Google Places API Introduction\">this article</a>.</p> <p>Once you have obtained your API key enter it in the <a href=\"%3$s\" title=\"Google Places Reviews Plugin Settings\">plugin settings page</a>.</p>"
 msgstr ""
 
-#: classes/widget.php:1191
+#: classes/widget.php:1195
 msgid " out of 5 stars"
 msgstr ""
 
-#: classes/widget.php:1199, classes/widget.php:1199
+#: classes/widget.php:1203, classes/widget.php:1203
 msgid "Reviewed from Google"
 msgstr ""
 
-#: classes/widget.php:1367
+#: classes/widget.php:1371
 msgid "Cache cleared"
 msgstr ""
 
-#: classes/widget.php:1373
+#: classes/widget.php:1377
 msgid "Error: Transient ID not set. Cache not cleared."
 msgstr ""
 
