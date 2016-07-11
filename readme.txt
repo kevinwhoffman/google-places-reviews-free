@@ -101,7 +101,8 @@ Yes, there are three basic themes included in the free version of the plugin. Th
 == Changelog ==
 
 = 1.4.2 =
-* Hotfix for new Google Maps API requirement
+* Fix: Enqueue Maps JS due to new Google API Key requirement
+* Tweak: Display warning message when an Google API error is detected to help prevent confusion
 
 = 1.4.1 =
 * Solidify Cache expiration setting for stability
