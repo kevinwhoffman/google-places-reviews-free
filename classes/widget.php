@@ -91,7 +91,7 @@ class Google_Places_Reviews extends WP_Widget {
 
 		if ( $hook == 'widgets.php' || ( $hook == 'customize.php' && defined( 'SITEORIGIN_PANELS_VERSION' ) ) ) {
 
-			wp_register_script( 'gpr_google_places_gmaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=' . $apikey, array( 'jquery' ) );
+			wp_register_script( 'gpr_google_places_gmaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=' . $apikey, array( 'jquery' ) );
 			wp_enqueue_script( 'gpr_google_places_gmaps' );
 
 			wp_register_script( 'gpr_widget_admin_tipsy', plugins_url( 'assets/js/gpr-tipsy' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
