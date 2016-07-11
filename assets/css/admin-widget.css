@@ -261,3 +261,10 @@ Alerts
     display: inline-block;
     margin-left: 5px;
 }
+
+
+/* On Google Error */
+input.gm-err-autocomplete {
+    background-repeat: no-repeat;
+    background-size: 25px;
+}

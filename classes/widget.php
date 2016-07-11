@@ -100,10 +100,11 @@ class Google_Places_Reviews extends WP_Widget {
 			wp_register_script( 'gpr_widget_admin_scripts', plugins_url( 'assets/js/admin-widget' . $suffix . '.js', dirname( __FILE__ ) ), array( 'jquery' ) );
 			wp_enqueue_script( 'gpr_widget_admin_scripts' );
 
-			wp_localize_script(
-				'gpr_widget_admin_scripts', 'ajax_object',
-				array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
-			);
+			wp_localize_script( 'gpr_widget_admin_scripts', 'gpr_ajax_object', array(
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+				'i18n'     => array(
+					'google_auth_error' => sprintf( __( '%1$sGoogle API Error:%2$s Due to recent changes by Google you must now add the Maps API to your existing API key in order to use the Location Lookup feature of the Google Places Widget. %3$sView documentation here%4$s', 'google-maps-pro' ), '<strong>', '</strong>', '<br><a href="https://wordimpress.com/documentation/maps-builder-pro/creating-maps-api-key/" target="_blank" class="new-window">', '</a>' ) )
+			) );
 
 			wp_register_style( 'gpr_widget_admin_tipsy', plugins_url( 'assets/css/gpr-tipsy' . $suffix . '.css', dirname( __FILE__ ) ) );
 			wp_enqueue_style( 'gpr_widget_admin_tipsy' );

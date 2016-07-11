@@ -3,6 +3,9 @@
  *
  *  @description: JavaScripts for the admin side of the widget
  */
+
+var gpr_ajax_object;
+
 (function ($) {
     "use strict";
 
@@ -23,6 +26,21 @@
         gpr_tipsy();
 
     }
+    
+    /**
+     * Detect Google Maps API Authentication Error
+     *
+     * @description:   Google Authentication Callback in case there was an error
+     *
+     * @see: https://developers.google.com/maps/documentation/javascript/events#auth-errors
+     * @see: https://developers.google.com/maps/documentation/javascript/events#auth-errors
+     */
+
+    window.gm_authFailure = function() {
+
+        $('p.gpr-autocomplete').after('<div class="notice gpr-notice-error error"><p>' + gpr_ajax_object.i18n.google_auth_error + '</p></div>');
+
+    };
 
 
     /**
@@ -41,7 +59,7 @@
             transient_id_1: $(this).data('transient-id-1'),
             transient_id_2: $(this).data('transient-id-2')
         };
-      
+
         $.post(ajaxurl, data, function (response) {
             console.log(response);
             $('.cache-clearing-loading').hide();
