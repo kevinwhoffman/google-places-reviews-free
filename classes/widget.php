@@ -229,25 +229,25 @@ class Google_Places_Reviews extends WP_Widget {
 
 				//Assign Time to appropriate Math
 				switch ( $expiration ) {
-					case '1 Hour':
+					case '1 hour':
 						$expiration = 3600;
 						break;
-					case '3 Hours':
+					case '3 hours':
 						$expiration = 3600 * 3;
 						break;
-					case '6 Hours':
+					case '6 hours':
 						$expiration = 3600 * 6;
 						break;
-					case '12 Hours':
+					case '12 hours':
 						$expiration = 60 * 60 * 12;
 						break;
-					case '1 Day':
+					case '1 day':
 						$expiration = 60 * 60 * 24;
 						break;
-					case '2 Days':
+					case '2 days':
 						$expiration = 60 * 60 * 48;
 						break;
-					case '1 Week':
+					case '1 week':
 						$expiration = 60 * 60 * 168;
 						break;
 				}
